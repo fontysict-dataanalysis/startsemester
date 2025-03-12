@@ -64,10 +64,13 @@ Libraries installeren **doe je niet vanuit een Notebook**, omdat dit een eenmali
 Installatie kan op 2 manieren:
 
 - Via de GUI van RStudio.  
-  Zoals je ziet kun je hier ook vinden welke libraries er al geïnstalleerd zijn.
-  <img src="/assets/img/lib_overview.png" width=400 />
-  Klik op Install en vervolgens tik je de naam van de library in.
-  ![bibliotheek installatie](assets/img/lib_install.png) { width:200px }
+  Zoals je ziet kun je hier ook vinden welke libraries er al geïnstalleerd zijn.\
+
+  <img src="/assets/img/lib_overview.png" width="423px" />\
+
+  Klik op Install en vervolgens tik je de naam van de library in.\
+
+  <img src="assets/img/lib_install.png" width="200px" }\
 
 - Ben je iets meer nerd, wil je sneller aan de slag, of moet je eventuele installatie issues oplossen? Dan gebruik je uiteraard de console! Deze vind je standaard in het vak linksonder, en kun je ook altijd via het menu naar voren toveren als je dat vak per ongeluk uitgezet hebt.  
   In een `install.packages()` commando geef je dan aan welke library je wilt installeren, bijvoorbeeld:
