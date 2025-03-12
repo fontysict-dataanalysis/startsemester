@@ -65,7 +65,7 @@ Installatie kan op 2 manieren:
 
 - Via de GUI van RStudio.  
   Zoals je ziet kun je hier ook vinden welke libraries er al geïnstalleerd zijn.
-  ![](assets/img/lib_overview.png =570x423)
+  ![bibliotheek overzicht](assets/img/lib_overview.png =x400)
   Klik op Install en vervolgens tik je de naam van de library in.
   ![bibliotheek installatie](assets/img/lib_install.png) { width:200px }
 
