@@ -1,8 +1,3 @@
----
-permalink: /index.html
-title: "Fontys ICT - Startsemester data analysis"
----
-
 # Over deze site
 
 Deze Github pages website bevat allerlei materialen die bedoeld zijn om wegwijs te worden in het startsemester van Fontys ICT en dan specifiek voor het onderwerp `data analysis`. De focus van deze materialen ligt op het gebied van data analyse en tranformatie met SQL en visualisatie met R studio.
@@ -21,18 +16,20 @@ Voordat je met de materialen op deze site aan de slag gaat, raden we ten zeerste
 
 Helaas openen links niet standaard in een nieuwe tab, dus tip: gebruik altijd crtl-click (of een andere shortcut) om te openen in nieuw tab.
 
-## [Oefeningen en challenges](toolbox)
+## [Bepaal je persoonlijke programma]
 
-Oefeningen van heel erg eenvoudig tot redelijk complex. Van een kennismaking met Markdown in Notebooks en basisvaardigheden in R tot complexere vraagstukken om met analyse, transformatie en visualisatie aan de slag te gaan, zelfs gecombineerd met SQL.
+Werkboeken van heel erg eenvoudig tot redelijk complex. Van een kennismaking met Markdown in Notebooks en basisvaardigheden in R tot complexere vraagstukken om met analyse, transformatie en visualisatie aan de slag te gaan, zelfs gecombineerd met SQL.
 
-## [Howto's](index_howtos)
+Kijk op de [roadmap](roadmap.md) welke werkboeken aansluiten bij wat jij wilt leren.
 
-Diverse instructies om technisch inhoudelijke zaken aan te pakken, of om te starten met een onderwerp. Zie hier de [index van howto's](index_howtos).
+## [Howto's]
 
-## [Cheat sheets & andere externe bronnen voor het leren van R en SQL](index_cheatsheets)
+Diverse instructies om technisch inhoudelijke zaken aan te pakken, of om te starten met een onderwerp. Zie hier de [index van howto's](howto.md).
+
+## [Cheat sheets & andere externe bronnen voor het leren van R en SQL]
 
 Verzameling van cheat sheets en andere bronnen die handig kunnen zijn. Ze gaan soms wel vaak een stuk verder dan wat je in het startsemester nodig zult hebben, dus laat je daardoor niet verwarren!  
-Zie hier het [overzicht van nuttige cheat sheets en andere bronnen](index_cheatsheets).
+Zie hier het [overzicht van nuttige cheat sheets en andere bronnen](cheeatsheets.md).
 
 ## Bijdragen?
 
