@@ -5,6 +5,8 @@ in het startsemester van Fontys ICT en dan specifiek het onderwerp Data Analyse.
 De focus van deze materialen ligt op het gebied van verkrijgen van inzicht door het analyseren, tranformeren en
 visualiseren van data. Daarvoor maken we gebruik van SQL en R.
 
+Begin met het lezen van de [roadmap](roadmap.md) en kijk wat <u>jij</u> nodig hebt in <u>jouw leerproces</u>.
+
 **Let op:\
 Dit document is blijvend in ontwikkeling. Het is de bedoeling dat het wordt aangepast op de eisen en wensen van studenten.
 Dat betekent dat er onderdelen gewijzigd worden en/of er aan worden toegevoegd. Mocht je als lezer ruimte voor verbetering zien, neem dan contact op met [de schrijver](mailto:k.velthuijs@fontys.nl).\
