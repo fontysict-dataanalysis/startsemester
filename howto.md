@@ -2,7 +2,8 @@
 
 In deze howto pagina worden de volgende onderwerpen besproken:
 
-- [Installatie van R-studio]()
+- [Installatie van R-studio](#locale-installatie-van-r-studio)
+- [Installeren van bibliotheken in R-studio](#installeren-van-bibliotheken)
 - [Notebooks en data importeren](#notebook-en-data-importeren)
 - [Notebooks exporteren](#notebooks-exporteren)
 
@@ -29,7 +30,7 @@ Je moet hier **2 stappen** voor doen, in deze volgorde:
     Free/Open Source versie pakt voor jouw besturingssysteem.
 
 Let op: Je zult als je zelf installeert ook de juiste libraries moeten
-installeren! Zie [deze HowTo](howto_install_libraries).
+installeren! Zie [deze HowTo](#installeren-van-bibliotheken).
 
 Kom je er niet uit? [Er zijn voldoende tutorials te
 vinden](https://bfy.tw/QRhs).
@@ -70,7 +71,7 @@ Installatie kan op 2 manieren:
 
   Klik op Install en vervolgens tik je de naam van de library in.\
 
-  <img src="assets/img/lib_install.png" width="200px" }\
+  <img src="assets/img/lib_install.png" width="200px">\
 
 - Ben je iets meer nerd, wil je sneller aan de slag, of moet je eventuele installatie issues oplossen? Dan gebruik je uiteraard de console! Deze vind je standaard in het vak linksonder, en kun je ook altijd via het menu naar voren toveren als je dat vak per ongeluk uitgezet hebt.  
   In een `install.packages()` commando geef je dan aan welke library je wilt installeren, bijvoorbeeld:
@@ -119,11 +120,11 @@ Je kunt via R studio je Notebooks naar verschillende bestandsformaten: als HTML 
 Belangrijk hierbij is om te weten wat er dan eigenlijk gebeurt en wat je moet checken.
 
 Voor de uitvoer exporteren naar PDF heb je een aparte package nodig. Heb je die niet geïnstalleerd, dan krijg je de volgende foutmelding:
-![export 1](assets/img/export_pdf.png)  
+![exporteren pdf](assets/img/export_pdf.png)  
 Installeer die package vanaf de console met het commando `tinytex::install_tinytex()`.
 
 Als je op Knit to _..._ klikt zie je de exportformaten waarin je uitvoer kan worden geëxporteerd:
-![export 1](assets/img/export_knit.png)  
+![exporteren knit](assets/img/export_knit.png)  
 Bij het exporteren worden alle chunks achter elkaar uitgevoerd. Deze uitvoer wordt opgeslagen in een bestand in dezelfde directory als waar je .Rmd bestand staat.
 
 Dingen waar je op moet letten, omdat dit fouten kan voorkomen:
