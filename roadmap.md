@@ -9,10 +9,12 @@ Hieronder staat aangegeven hoe moeilijk ze zijn (in relatie tot het niveau dat w
  \*\*\*\* = advanced  
  \*\*\*\*\* = epic
 
-#### \* Verkopen
+| **Naam van het werkboek**                                                                                                             | **Onderwerp** | **Moeilijk?** |
+| :------------------------------------------------------------------------------------------------------------------------------------ | :-----------: | :-----------: |
+| **Verkopen**                                                                                                                          |   _SQL_,_R_   |      \*       |
+| Vertaal een beperkte dataset met verkopen per vertegenwoordiger naar informatie en kijk hoe je die het duidelijkst kunt visualiseren. |               |
 
 **_SQL_**, **_R_**\
-Vertaal een beperkte dataset met verkopen per vertegenwoordiger naar informatie en kijk hoe je die het duidelijkst kunt visualiseren.
 
 ### \* Galgje
 
