@@ -1,0 +1,870 @@
+---
+title: "De Rode Schoentjes"
+subtitle: "Eerste opdrachten voor data analyse met SQL en R."
+author: Kees Velthuijs
+date: "februari 2025"
+email: "k.velthuijs@fontys.nl"
+
+fontfamily: cmbright
+fontsize: 9pt
+
+toc: true 
+toc_depth: 3
+number_sections: true
+
+theme: united
+highlight: tango
+
+editor_options:
+  markdown:
+    wrap: 82
+    canonical: true
+    
+output:
+  pdf_document:
+    keep_tex: true
+    fig_caption: yes
+    latex_engine: pdflatex
+    number_sections: true
+---
+
+\newpage
+
+# Over dit document
+
+Dit PDF-document bevat allerlei materialen die bedoeld zijn om wegwijs te worden
+in het startsemester van Fontys ICT en dan specifiek het profiel ICT & Business.
+De focus van deze materialen ligt op het gebied van data analyse, tranformatie en
+visualisatie met de talen R en SQL.
+
+**Let op:\
+Dit document is op dit moment in de fase ontwerp. Het kan zijn dat het tijdens het
+semester er onderdelen gewijzigd worden en/of er aan worden toegevoegd. Mocht u
+als lezer verbeteringen zien, neem dan contact op met de schrijver.\
+Alvast bedankt!**
+
+## Waarom data analyse?
+
+[**TODO: uitleg van de positie van data analyse binnen ICT & Business**]
+
+## Hoe te starten?
+
+Dit document is een werkboek dat je meer inzicht geeft in data analyse. Het gaat
+over de schoenwinkels van De Rode Schoentjes. Zij verkopen schoenen,
+onderhoudsmiddelen en accessoires in grote steden in Europa.
+
+Het eerste hoofdstuk is een inleiding. Daarin wordt uitgelegd hoe het document is
+opgebouwd en wat het doel is van het document.
+
+Hoofdstuk 2 is in feite al het begin van je eerste eigen data analyse. De gegevens
+worden klaargezet zodat je aan de slag kunt. Het is voor de start nog niet nodig
+dat je de inhoud van de code helemaal begrijpt. Als het goed is wordt dat later
+wel duidelijk.
+
+Jouw werk zit in hoofdstuk 3 en volgende. Dan ga je aan de gang met SQL en R om de
+data analyse uit te voeren.
+
+Zorg dat je toegang hebt tot Rstudio. In de volgende paragraaf vind je de
+informatie om je eigen omgeving in te richten. In de paragraaf Notebook wordt
+uitgelegd hoe je de
+
+### RStudio
+
+Voor de data analyse gebruiken we R. Dat is een taal die speciaal voor data
+analyse is ontwikkeld. In R maak je gebruik van zogenaamde Notebooks. Dat zijn
+tekstbestanden die je met programma's als Notepad of Visual Studio Code kunt
+openen.
+
+Het is slim om een ontwikkelomgeving (IDE) te gebruiken. Daarmee kun je niet
+alleen de tekst van het notebook veranderen, maar ook meteen de code uitvoeren.
+
+Het is goed om te weten dat je verschillende keuzes hebt voor je
+ontwikkelomgeving:
+
+-   **RStudio Cloud gebruiken**.\
+    Gebruik je incidenteel RStudio en heb je weinig behoefte om te installeren,
+    wil je vooral even proberen: gebruik dan [RStudio
+    Cloud](https://rstudio.cloud/). Deze is gratis te gebruiken en geschikt voor
+    proefstuderen en incidenteel gebruik. Je maakt hier zelf een account aan. Zie
+    voor meer info de [guide](https://rstudio.cloud/learn/guide).\
+    Eventuele bestanden moet je altijd eerst uploaden naar de cloud server!
+
+```         
+**Let op**: 
+Deze versie is slechts 15 uur per maand te gebruiken volgens de huidige voorwaarden, 
+dat zal te weinig zijn om alle opdrachten in dit document uit te voeren!
+```
+
+-   **RStudio server van FHICT gebruiken**.\
+    Heb je behoefte aan wat meer mogelijkheden en loop je tegen de grenzen aan van
+    de cloud versie? Dan hebben we binnen FHICT een eigen RStudio server. Dit kan
+    handig zijn als je lokaal vast loopt, geen nieuw account op RStudio Cloud aan
+    wil maken, of je eigen installatie niet om zeep wil helpen :). Ga naar de
+    [FHICT Rstudio server](https://rstudio.app.fhict.nl/) en log in met je **I
+    account (nummer zonder @fontysict.nl)**. Het werkt vergelijkbaar met RStudio
+    Cloud.\
+    Eventuele bestanden moet je dus altijd eerst uploaden (naar de FHICT server)!
+
+-   **Installeer R & RStudio lokaal op je eigen machine**.\
+    Dit is aan te raden als je zelf controle wilt over welke libraries je wilt
+    kunnen installeren, je lokale bestanden makkelijk wilt kunnen gebruiken en als
+    je met diverse databronnen wilt kunnen koppelen.\
+    Ga je de verdieping ICT & Business doen, kies dan dit.\
+    Je moet hier **2 stappen** voor doen, in deze volgorde:
+
+    1.  Installeer de programmeertaal R.\
+        Dit is de zogenaamde 'interpreter' die R code kan uitvoeren. Via [deze
+        site](https://cloud.r-project.org/) kom je bij de download pagina uit.
+        Check vervolgens welk besturingssysteem je nodig hebt en pak de meest
+        recente installer (.exe voor Windows of .pkg voor Mac)
+    2.  Installeer de ontwikkelomgeving Rstudio.\
+        Dit is de user interface waarin je handig je Notebooks (werkbestanden) kan
+        bewerken, net zoiets als Visual Studio. Je kunt Rstudio [hier
+        vinden](https://rstudio.com/products/rstudio/download/). Let op dat je de
+        Free/Open Source versie pakt voor jouw besturingssysteem.
+
+    Let op: Je zult als je zelf installeert ook de juiste libraries moeten
+    installeren! Zie [deze HowTo](howto_install_libraries).
+
+    Kom je er niet uit? [Er zijn voldoende tutorials te
+    vinden](https://bfy.tw/QRhs).
+
+### Notebooks en data upload
+
+In R gebruiken we eigenlijk altijd zogenaamde Notebooks. Dat zijn .Rmd (RMarkdown)
+bestanden waar je uitleg, code (chunks) & output samen kunt voegen. Dit zorgt o.a.
+voor herhaalbaarheid en leesbaarheid van je stappen, een hele verbetering t.o.v.
+data analyse in MS Excel. Rstudio opent standaard niet met een Notebook. Dat moet
+je zelf uploaden of aanmaken als je aan de slag gaat.
+
+Download uit canvas het bestand `Rode Schoentjes - Data Analysis.rmd` en het
+databestand `Rode Schoentjes - Data.zip`. Volg de instructies hieronder voor het
+openen van het notebook en beschikbaar krijgen van de data.
+
+-   **Online versie:**\
+    Heb je de online versie van R-studio, kies rechtsonder in het scherm voor de
+    tab *Files*. Klik op de knop *Upload*. Browse naar de de map "downloads" en
+    selecteer het Rmd-bestand. Als je op "ok" klikt, wordt het document ingeladen
+    en zie je het tussen de bestanden staan. Klik erop en je dan wordt het
+    zichbaar in het scherm linksboven. Voor het ophalen van de data klik je nog
+    een keer op de knop *Upload*. Nu open je het zip bestand
+    `Rode Schoentjes - Data.zip`. R-studio zal het zip-bestand uitpakken en de
+    databestanden los in het bestandsoverzicht zetten.
+
+-   **Lokale installatie:**\
+    Als je R studio op je pc geïnstalleerd hebt, open je het bestand via het menu
+    *File*/*Open*. Ga naar de map met downloads en open het Rmd-bestand. De
+    databestanden zijn in dit geval beschikbaar in de map Downloads op je pc.
+    Vraag hulp aan je docent om de bestanden op de goede plaats neer te zetten.
+    Mogelijk moet de code van het notebook worden aangepast om de data succesvol
+    in te lezen.
+
+## Voorkennis
+
+Voordat je met de materialen op deze site aan de slag gaat, raden we ten zeerste
+aan om een of meerdere kennismakingscursussen te doen op het gebied van R
+(Tidyverse en GGPlot) en/of SQL (tenzij je daar al ervaring mee hebt). Deze kun je
+vinden via o.a.:
+
+-   [Datacamp](https://www.datacamp.com/) (Vraag je docent voor studententoegang)
+
+## Howto's
+
+Onze colleg Koen Suilen heeft een aantal veel voorkomende problemen op een rijtje
+gezet om je op weg te helpen. De links hieronder verwijzen naar zijn archief op
+github.io waar hij die toelicht:
+
+-   [Gebruiken en installeren van R &
+    RStudio](https://ksuilen.github.io/howto_installatie) Bevat ook nuttige tips
+    als je de FHICT RStudio server gebruikt. Installeren hoeft niet tijdens de
+    oriëntatie (mag wel).
+-   [Gebruiken en installeren van libraries/packages in
+    RStudio](https://ksuilen.github.io/howto_install_libraries) Bevat ook nuttige
+    tips als je de FHICT RStudio server gebruikt. Installeren hoeft niet tijdens
+    de oriëntatie (mag wel).
+-   [Veranderen working directories & file
+    management](https://ksuilen.github.io/howto_directories) Voor de oriëntatie
+    staat hier hoe je bestanden naar de RStudio server kunt uploaden, de rest is
+    meer voor de verdieping.
+-   [Data importeren
+    (CSV/XLS/Database)](https://ksuilen.github.io/howto_import_datasets)
+-   [Mock data genereren](https://ksuilen.github.io/howto_mockdata)
+-   [Exporteren naar HTML of PDF](https://ksuilen.github.io/howto_html_pdf)
+
+## Cheat sheets
+
+Hieronder vind je links naar een aantal handige cheat sheets die je kunt gebruiken
+als reminder als je de opdrachten aan het uitvoeren bent.
+
+-   [RStudio
+    IDE](https://raw.githubusercontent.com/rstudio/cheatsheets/master/rstudio-ide.pdf)
+    over gebruik van de RStudio ontwikkel omgeving (door RStudio)
+
+### R en nuttige packages
+
+-   [Tidyverse voor
+    beginners](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Tidyverse+Cheat+Sheet.pdf)
+    (door Datacamp)
+-   [Data transformatie met
+    dplyr](https://raw.githubusercontent.com/rstudio/cheatsheets/master/data-transformation.pdf)
+    voor filteren, groeperen, sorteren, samenvatten, etc. met dplyr (door Rstudio)
+-   [Data visualisatie met
+    ggplot2](https://raw.githubusercontent.com/rstudio/cheatsheets/master/data-visualization-2.1.pdf)
+    (door RStudio)
+-   [Lubridate](https://raw.githubusercontent.com/rstudio/cheatsheets/master/lubridate.pdf)
+    voor het werken met datums en tijden (door RStudio)
+-   [R short reference
+    card](https://cran.r-project.org/doc/contrib/Short-refcard.pdf) met van van
+    alles een beetje (door Tom Short)
+
+### Markdown
+
+-   [R
+    Markdown](https://raw.githubusercontent.com/rstudio/cheatsheets/master/rmarkdown-2.0.pdf)
+    met op de eerste pagina dingen over hoe en wat in de RStudio IDE en op de
+    tweede pagina syntax en voorbeelden (door RStudio)
+-   [Markdown guide](https://www.markdownguide.org/basic-syntax/) oke, niet echt
+    een cheatsheet maar wel een handig overzicht met wat nuttige do's en don'ts
+
+### SQL
+
+-   [SQL cheat
+    sheet](https://www.sqltutorial.org/wp-content/uploads/2016/04/SQL-cheat-sheet.pdf)
+    cheat sheet die heel veel verder gaat dan wat nodig is voor het startsemester
+    (door sqltutorial.org)
+
+## Andere bronnen
+
+Uiteraard heeft Datacamp allerlei cursussen die je kunt volgen. Zie Canvas voor de
+links naar de cursussen en hoofdstukken of vraag je docent.
+
+### R en nuttige packages
+
+-   [R seek](https://rseek.org/) zoekmachine die specifiek zoekt op domeinen
+    waarvan bekend is dat er content over R op staat (daar waar je via Bing,
+    Google of een andere algemene zoekmachine nog wel eens op hele andere
+    programmeertalen uit komt)
+-   [R for datascience](https://r4ds.had.co.nz/) boek over R geschreven in R
+    Markdown (door Hadley Wickham en Garrett Grolemund, met bijdragen van vele
+    anderen voor de online versie)
+-   [ggplot2 essentials](http://www.sthda.com/english/wiki/ggplot2-essentials) een
+    website waar ze veel verschillende soorten grafieken laten zien, maar ook tips
+    om je grafieken leesbaarder te maken met legenda, titels, etc.
+
+### SQL
+
+-   [SQL leren](https://gkoetsier.nl/tut_mysql.html) een hele basic website waarin
+    SQL uitgelegd wordt in het Nederlands (door Donny Semeleer)
+-   [FHICT SQL tool](https://www.fhict.nu/sqltool) tool waarin je SQL statements
+    uit kunt proberen als je een Fontys ICT i-account hebt.
+
+\newpage
+
+# Voorbereiding
+
+## Benodigde bibliotheken
+
+Laad de nodige bibliotheken voor de verwerking van de data:
+
+-   tidyr
+-   tidyverse
+-   dplyr
+-   ggplot2
+-   readxl
+-   RSQLite
+-   lubridate
+-   tsibble
+
+```{r Ophalen bibliotheken, fig.cap="Laden bibliotheken", message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+library(tidyverse)  # bibliotheek voor datamanipulatie in R studio
+library(dplyr)      # bibliotheek voor het groeperen en samenvatten van dataframes in R
+library(ggplot2)    # bibliotheek voor het weergeven van data in grafieken
+library(readxl)     # bibliotheek Voor het inlezen van data uit Excel
+library(RSQLite)    # Ondersteuning van SQLite databases in memory
+library(lubridate)  # bibliotheek voor het interpreteren van datums, tijden en periodes 
+library(tsibble)    # zorg voor kalender functies zoals yearweek()
+```
+
+## Inlezen van de bestanden
+
+De data bestaat uit verkoopgegevens van de winkels van De Rode Schoentjes in
+Nederland, België, Duitsland, Denemarken, Frankrijk en het Verenigd Koninkrijk. De
+data bestaat uit vier Excel sheets die je hebt gedownload in één zip-bestand en
+hebt ingelezen in R-studio. In je [r-studio app](https://rstudio.app.fhict.nl/)
+zou je die in het scherm rechtsonder moeten kunnen zien als je de tab **Files**
+hebt openstaan.
+
+| **Bestand**        | **Omschrijving**                                     |
+|:-------------------|:-----------------------------------------------------|
+| **filiaal.xlsx**   | Locatie van de filialen                              |
+| **categorie.xlsx** | De naam van de omzetgroepen van het assortiment      |
+| **budget.xlsx**    | De verkoopprognose per filiaal per week              |
+| **kassa.xlsx**     | De verkoop per categorie per kassa per filaal en dag |
+
+```{r Inladen data in SQLite database, fig.cap="Laden bestanden", message=FALSE, warning=FALSE, include=FALSE}
+# online installatie: weghalen als gebruik wordt gemaakt van de rstudio in de online versie
+# lokale installatie: pad aanpassen naar de locatie waar de databestanden zijn gedownload en uitgepakt 
+
+# setwd('~/R/Datasets/De Rode Schoentjes/')
+database <- DBI::dbConnect(RSQLite::SQLite(), ":memory:")
+copy_to(database, name="filiaal",
+        df = read_excel('Filiaal.xlsx'))
+copy_to(database, name="categorie",
+        df = read_excel('Categorie.xlsx'))
+copy_to(database, name="budget",
+        df = read_excel('Budget.xlsx'))
+copy_to(database, name="kassa",
+        df = read_excel('Kassa.xlsx'))
+```
+
+\newpage
+
+## De data
+
+### Filiaal
+
+De table Filiaal bevat de gegevens van alle winkels van De Rode Schoentjes. De
+winkels zijn gevestigd in verschillende Europese landen, zoals Nederland, België,
+Frankrijk, Duitsland, Denemarken en het Verenigd Koninkrijk.
+
+In de tabel zijn de volgende gegevens aanwezig:
+
+| **Kolom** | **Betekenis**                                      |
+|:----------|:---------------------------------------------------|
+| ID        | Een unieke code voor de locatie.                   |
+| Locatie   | De naam voor de locatie waar de winkel is.         |
+| Adres     | Straatnaam en huisnummer van de winkel.            |
+| Plaats    | Plaats waar de winkel gevestigd is.                |
+| Land      | Landcode van het land waar de winkel gevestigd is. |
+| Manager   | De naam van de manager van het filiaal             |
+| Email     | Het e-mailadres voor berichten naar het filiaal    |
+
+Hierbij een overzicht van hoe enkele locaties zijn opgeslagen in de tabel
+"filiaal".
+
+```{sql echo=FALSE, connection=database}
+SELECT *
+FROM Filiaal
+```
+
+### Categorie
+
+Alle producten in de winkel zijn ingedeeld in tien categorieën. Alle winkels
+voeren in principe alle producten in dezelfde categorieën. Op die manier zijn de
+verkopen van de winkels makkelijker met elkaar te vergelijken.
+
+Aangezien er tien categorieën zijn, krijg je hieronder een overzicht de hele tabel
+"categorie".
+
+| **Kolom**    | **Betekenis**                       |
+|:-------------|:------------------------------------|
+| ID           | Een unieke code voor de categorie.  |
+| Omschrijving | Een omschrijving voor de categorie. |
+
+```{sql echo=FALSE, connection=database}
+SELECT *
+FROM Categorie
+```
+
+### Budget
+
+Aan het begin van elk kwartaal wordt op het hoofdkantoor een prognose gemaakt van
+de omzet in de komende maanden. Dit budget is de doelstelling voor de filialen en
+bevat de verwachte omzet per week voor de filialen.
+
+De tabel bevat de volgende gegevens:
+
+| **Kolom**   | **Betekenis**                                                   |
+|:------------|:----------------------------------------------------------------|
+| ID          | Een unieke code voor een budgetregel.                           |
+| *FiliaalID* | Een verwijzing naar het filiaalnummer in de tabel **Filiaal**.  |
+| Jaar        | Het nummer van het jaar waarvoor het budget geldt.              |
+| Week        | Het nummer van de week waarvoor het budget geldt.               |
+| Budget      | De omzetdoelstelling voor het filiaal in de aangegeven periode. |
+
+Om een indruk te krijgen van de gegevens in de tabel budget zijn hieronder een
+aantal regels uit de tabel "budget" afgedrukt:
+
+```{sql echo=FALSE, connection=database}
+SELECT *
+FROM Budget
+```
+
+### Kassa
+
+Alle verkopen in het filiaal worden via de kassa afgerekend. Aan het einde van de
+dag worden de kassa's afgesloten. Bij dat proces wordt de omzet per categorie
+opgeslagen. Deze informatie wordt verzameld op het hoofdkantoor. Daardoor ontstaat
+een tabel met de volgende kolommen:
+
+| **Kolom**     | **Betekenis**                                                 |
+|:--------------|:--------------------------------------------------------------|
+| ID            | Een unieke code voor een omzetregel in de kassa.              |
+| *FiliaalID*   | De verwijzing naar het filiaalnummer in de tabel **Filiaal**. |
+| KassaID       | Een uniek nummer voor een kassa binnen het filiaal.           |
+| *CategorieID* | Het nummer van een omzetcategorie in de tabel **categorie**.  |
+| Bedrag        | De omzet voor deze categorie voor deze kassa in het filiaal.  |
+
+Hieronder krijg je een indruk van de gegevens die in de tabel "kassa" worden
+opgeslagen:
+
+```{sql echo=FALSE, connection=database}
+SELECT *
+FROM Kassa
+```
+
+## Datum in de tabel kassa
+
+De datums worden in SQLite bijde import vanuit Excel opgeslagen als nummers.
+Daarbij wordt het 'unixepoch' berekening toegepast. Om van dit numerieke gegeven
+te vertalen naar een datum in de vorm van jaar, maand en jaar is een aparte
+functie nodig. In het onderstaande voorbeeld is aan de data in van de eerste 10
+regels van de tabel kassa de datum toegevoegd.
+
+```{sql connection=database}
+SELECT *
+  , date(datum, 'unixepoch') as 'berekende datum'
+FROM Kassa
+```
+
+## Datum tabel
+
+De tabel kassa heeft alleen de gegevens van de dagen waarop er in de winkel
+verkocht is. Als de winkel gesloten is, is er geen verkoop. Die datum komt in de
+tabel kassa dan niet voor. Zo kun je nooit zien wanneer er niets verkocht is.
+
+In Europa houden we de maandag aan als eerste dag van de week. Dat in
+tegenstelling tot de Verenigde Staten. Dat lijkt misschien niet belangrijk, maar
+wel om de eerste week van het jaar te bepalen. Week 1 is de eerste week waarin er
+vier dagen in het nieuwe jaar vallen. Als Nieuwjaar op een donderdag valt is dat
+in de Verenigde Staten week 53, maar in Europa week 1.
+
+Daarom is het handig om een tabel te hebben met alle datums, het weeknummer, de
+maand en het jaar. Die moet je niet in Excel maken, maar laten genereren uit code.
+Hierbij het script:
+
+```{r Genereer een dataframe met datumgegevens, include=FALSE}
+# genereer de reeks van dagen tussen 29 december 2024 en 31 december 2025 
+datums <- seq(as.Date("2024-12-29"), as.Date("2025-12-31"), by="day")
+
+# maak een dataframe met alle datumgegevens. Zorg dat de datum als tekst wordt opgeslagen. 
+# Daardoor hoef je voor het laten zien van de datums geen datumfunctie te gebruiken.
+frameDatums <- data.frame(
+  Datum = format(datums, "%Y-%m-%d"),
+  Wdag = wday(datums, label=FALSE),
+  Wd = wday(datums, label=TRUE, abbr=TRUE),
+  WdNm = wday(datums, label=TRUE, abbr=FALSE),
+  WkNr = isoweek(datums),
+  JrWk = yearweek(datums),
+  MndNr = month(datums),
+  Mnd = month(datums, label=TRUE, abbr=TRUE),
+  MndNm = month(datums, label = TRUE, abbr=FALSE),
+  Mdag = mday(datums),
+  Qrt = quarter(datums, type = "year.quarter"),
+  JrNr = year(datums),
+  Jdag = yday(datums)
+) 
+
+# pas de weergave van het kwartaal aan naar YY.Qn
+frameDatums$Qrt <- str_replace_all(frameDatums$Qrt, c("^20" = "", "\\." = "Q"))
+
+# pas de weergave van het weekjaar aan naar YY/WW
+frameDatums$JrWk <- str_replace_all(frameDatums$JrWk, c("^20" = "", " W" = "/"))
+
+# voeg het dataframe toe aan de SQLite database
+copy_to(database, "datumtabel", df=frameDatums)
+```
+
+Dit is hoe de gegenereerde datumtabel er uitziet:
+
+```{sql echo=FALSE, connection=database}
+SELECT *
+FROM Datumtabel
+```
+
+\newpage
+
+# De eerste opdrachten
+
+**Aanvangssituatie**:\
+Je hebt de ontwikkelomgeving van Rstudio open staan. Het document
+`Rode Schoentjes - Data Analyse.rmd` is geopend in het scherm rechtsboven.
+Rechtsonder, in het overzicht met **Files**, zijn de Excel bestanden
+`budget.xlsx`, `categorie.xlsx`. `filiaal.xlsx` en `kassa.xlsx` zichtbaar.
+
+Mocht dat niet het geval zijn, kijk dan in hoofdstuk 1 na hoe deze situatie
+gecreëerd kan worden of neem contact op met uw docent.
+
+Bij deze eerste opdrachten wordt telkens maar gebruik gemaakt van één tabel
+waaruit de gegevens worden gehaald. Op basis daarvan worden de methodes voor
+selecteren en samenvatten van gegevens uitgelegd. Aan de hand van de opdrachten
+doe je ervaring op in het toepassen van de onderdelen.
+
+## Het `SELECT` statement
+
+Met SQL kun je gegevens uit een database ophalen. Daarbij wordt een vast template
+gebruikt. De meeste databases, MS SQL, MYSQL, Progress, Oracle, Postgres,
+ondersteunen een vorm van SQL. Dat is handig, want zo kun je altijd zien wat er in
+een tabel zit.
+
+In basis heeft het `SELECT` statement heeft een template met componenten in een
+vaste volgorde. We beginnen eenvoudig en zullen elke keer een onderdeel aan het
+template toevoegen.
+
+## De `FROM` clausule
+
+Het eerste onderdeel van het `SELECT` statement is de `FROM` clausule. Achter
+`FROM` staat de naam van de tabel die gebruikt wordt. Leer jezelf aan dat je
+achter `FROM` altijd maar één tabelnaam vermeldt. Later zul je lere hoe je
+desondanks gegevens uit meer tabellen kunt opvragen.
+
+Laten we beginnen met een overzicht zien van alle productcategorieën.
+
+```{sql echo=FALSE, connection=database}
+SELECT *
+FROM categorie
+```
+
+## De `SELECT` clausule
+
+### Kolomfiltering
+
+Achter `SELECT` staan de namen van kolommen die je in de uitvoer wilt zien. Als je
+alle kolommen wilt zien gebruik je een sterretje.
+
+Het gebruik van de `SELECT` clausule is een vorm van *kolomfiltering* of
+*verticale filtering*. Door daar iets in te voeren, zijn niet alle kolommen
+zichbaar.
+
+Vervang het sterretje (\*) na SELECT zo dat van de filialen alleen het id, de naam
+van de manager en het e-mailadres van de manager wordt getoond.
+
+```{sql connection=database}
+--- SELECT 
+--- FROM filiaal
+```
+
+### Kolomalias
+
+Een kolomnaam ID is natuurlijk niet zo mooi. We kunnen de kolomnaam vervangen door
+een zogenaamde *alias*. Achter de naam van de kolom zet je dan`AS` met een nieuwe
+naam: de alias.
+
+Hieronder een voorbeeld voor de tabel `categorie`. De kolomnaam ID is vervangen
+door Code.
+
+Het is ook mogelijk om in de alias een spatie op te nemen. Daarvoor plaats je de
+alias tussen blokhaken *[]*. In het onderstaande voorbeeld is dat gedaan met de
+"Categorie omschrijving".
+
+```{sql echo=TRUE, connection=database}
+SELECT id AS Code
+    , omschrijving as [Categorie omschrijving]
+FROM categorie
+```
+
+## De `WHERE` clausule
+
+Met de `WHERE` clausule geef je een voorwwaarde waaraan de regel moet voldoen.
+Daarmee beperk je het aantal regels dat wordt getoond. Om die reden wordt dit ook
+wel *regelfiltering* of *horizontale filtering* genoemd.
+
+### Filialen in London
+
+Selecteer uit de tabel `filiaal` de locatie en het adres van de locaties in
+Londen.
+
+```{sql echo=FALSE, connection=database}
+--- SELECT 
+--- FROM filiaal
+--- WHERE 
+```
+
+Selecteer uit de tabel `filiaal` de namen van de locaties en managers van filialen
+in België en Frankrijk.
+
+```{sql connection=database}
+SELECT locatie
+    , manager
+FROM filiaal
+WHERE Land = 'BE' OR Land = 'FR'
+```
+
+### `BETWEEN` clausule
+
+In de tabel `kassa` staat de werkelijke omzet van een kassa in een filiaal.
+Selecteer het filiaalnummer, kassanummer, categorie, de datum en de omzet. Doe dat
+voor de categorieën seizoensproducten (7) en orthopedische schoenen (9). Laat
+alleen de regels zien voor de filialen in Denemarken (filiaal 27 tot en met 30)
+van 8 tot 9 april 2025.
+
+Om de datum uit kassa te vertalen naar een "echte" datum gebruik je de tekst
+`date(datum, 'unixepoch')`.
+
+```{sql connection=database}
+--- SELECT 
+--- FROM Kassa
+--- WHERE 
+```
+
+In de `WHERE` clausule heb je voor het selecteren van de categorieën `OR` nodig,
+maar voor de datums en de filialen `AND`. Dat maakt het opstellen van een goede
+`WHERE` clausule best ingewikkeld.
+
+Door het gebruik van `BETWEEN` wordt het eenvoudiger. Zie hieronder de\
+overzichtelijk. Vooral als je nu de categorie zou uitbreiden
+
+```{sql echo=FALSE, connection=database}
+--- SELECT
+--- FROM Kassa
+--- WHERE 
+```
+
+Voor het bepalen van de omzet is het belangrijk om te weten welke weeknummers de
+omzet van april 2025 bepalen. Kun jij dat opvragen uit de tabel `datum`? De naam
+van de maand staat in de kolom `mndnm`.
+
+```{sql echo=FALSE, connection=database}
+--- SELECT 
+--- FROM Datumtabel
+--- where
+```
+
+### `IN` clausule
+
+Selecteer uit de tabel `Budget` de gewenste omzet in week 1 en 5 van filialen in
+Brabant. Dat zijn de filialen 4, 7 en 8. Laat alle kolommen van de tabel `Budget`
+zien.
+
+```{sql echo=FALSE, connection=database}
+--- SELECT 
+--- FROM Budget
+--- WHERE
+```
+
+Je merkt dat het nog niet zo eenvoudig is. Als je verschillende waardes wilt
+filteren in een kolom kun je gebruik maken van de `IN` clausule. De uitkomst
+blijft natuurlijk hetzelfde, maar het `SELECT` statement oogt daardoor een stuk
+overzichtelijker.
+
+```{sql connection=database}
+--- SELECT 
+--- FROM Budget
+--- WHERE 
+```
+
+Kun je met gebruik van de `IN` clausule een overzicht maken van de locaties van
+filialen in Denemarken en Frankrijk?
+
+```{sql echo=FALSE, connection=database}
+--- SELECT 
+--- FROM filiaal
+--- WHERE 
+```
+
+### `LIKE` clause
+
+In de vorige paragrafen hebben we aandacht gehad voor de filtering Je ziet dat er
+categorieën zijn die verwijzen naar schoenen en andere productgroepen. Kun je een
+overzicht maken met alle categorieën waar in de omschrijving de tekst "schoenen"
+voorkomt?
+
+```{sql echo=TRUE, connection=database}
+--- SELECT *
+--- FROM  categorie
+--- WHERE 
+```
+
+## DISTINCT
+
+Bij het opvragen van gegevens krijg je in principe de kolomgegevens van alle
+regels die in de tabel gevonden zijn. Er is een mogelijkheid om alleen unieke
+gegevens te krijgen door achter `SELECT` de term `DISTINCT` toe te voegen.
+
+Hierbij een voorbeeld om alle unieke w van alle filialen op te halen. Hoewel er 2
+filialen in Londen zijn, komt de plaatsnaam Londen nu maar 1x voor.
+
+```{sql connection=database}
+SELECT DISTINCT Plaats
+FROM filiaal
+WHERE Land = 'UK'
+```
+
+## Samenvatten
+
+Tot nu toe hebben we de gegevens van kolommen opgevraagd. Het is ook mogelijk om
+kolomgegevens samen te vatten. Bij het samenvatten wordt een berekening uitgevoerd
+op de kolomwaarden die geselecteerd zijn uit de tabel achter `FROM` en gefilterd
+zijn met de `WHERE` clausule. Om samen te vatten voegen we zogenaamde *aggreate
+phrases* toe achter `SELECT`.
+
+Er zijn verschillende functies voor het samenvatten beschikbaar in SQL:
+
+| **Functie** | **Omschrijving**                           |
+|:------------|:-------------------------------------------|
+| COUNT()     | Tel het aantal kolomwaarden.               |
+| SUM()       | Bereken het totaal van de kolomwaarden.    |
+| MIN()       | Bepaal de minimum van de kolomwaarden.     |
+| MAX()       | Bepaal het maximum van de kolomwaarden.    |
+| AVG()       | Bepaal het gemiddelde van de kolomwaarden. |
+
+### COUNT(\*)
+
+Telt het aantal kolomwaarden. Kijk hieronder hoe het totaal aantal budgetregels
+van filiaal 10 wordt geteld.
+
+```{sql echo=TRUE, connection=database}
+SELECT COUNT(*)
+FROM Budget
+WHERE FiliaalID = 10
+```
+
+### COUNT(DISTINCT)
+
+Binnen de functie `COUNT()` kun je te tekst `DISTINCT` toevoegen. Daarmee worden
+alle unieke waarden geteld. Als een kolomwaarde meer dan 1x voorkomt, wordt die
+maar één keer geteld. Kijk hieronder naar het aantal kassa's dat omzet had op
+Eerste Paasdag (18 april 2025).
+
+```{sql echo=TRUE, connection=database}
+SELECT COUNT (DISTINCT FiliaalID)
+FROM kassa
+WHERE date(datum, 'unixepoch') = '2025-04-18'
+```
+
+Ga nu zelf aan de slag en tel het aantal keren dat de omzet aan de kassa voor de
+productcategorie werkschoenen (8) minder was dan € 10.
+
+```{sql connection=database, echo=FALSE}
+--- SELECT 
+--- FROM 
+--- WHERE 
+```
+
+Tel het aantal unieke productcategorieën waarvan de omzet aan de kassa hoger was
+dan € 500. Controleer daarna de uitkomst.
+
+```{sql connection=database, echo=FALSE}
+--- SELECT 
+--- FROM 
+--- WHERE 
+```
+
+Hoe vaak was de omzet aan de kassa van een productcategorie aan het einde van een
+dag minder dan € 10? Controleer de uitkomst
+
+```{sql connection=database, echo=FALSE}
+--- SELECT 
+--- FROM 
+--- WHERE 
+```
+
+Bij hoe veel productcategorieën is het voorgekomen dat de omzet aan de kassa aan
+het einde van een dag minder dan € 10 was? Controleer de uitkomst
+
+```{sql connection=database, echo=FALSE}
+--- SELECT
+--- FROM 
+--- WHERE
+```
+
+### `SUM`
+
+De andere vorm van het samenvatten van kolomwaarden is het optellen van waarde.
+Kijk of je met `SUM` de totale omzet van het filiaal in Den Bosch (7) over april
+kunt berekenen.
+
+```{sql connection=database, echo=FALSE}
+--- SELECT
+--- FROM 
+--- WHERE
+```
+
+Wat was het budget van het filiaal over april 2025 als je weet dat deze periode
+week 14 tot en met 18 is?
+
+```{sql connection=database, echo=FALSE}
+--- SELECT
+--- FROM 
+--- WHERE
+```
+
+### `MIN` en `MAX`
+
+[**TODO: UITLEG EN OPDRACHTEN TOEVOEGEN**]
+
+## `ORDER BY` clausule
+
+[**TODO: UITLEG EN OPDRACHTEN TOEVOEGEN**]
+
+## `GROUP BY` clausule
+
+[**TODO: UITLEG EN OPDRACHTEN TOEVOEGEN**]
+
+## `HAVING` clausule
+
+[**TODO: UITLEG EN OPDRACHTEN TOEVOEGEN**]
+
+\newpage
+
+# Meerdere tabellen
+
+Tot nu toe hebben we bij het opvragen van gegevens we ons beperkt tot één tabel,
+maar het is ook mogelijk om gegevens op te vragen vanuit meerdere tabellen.
+
+Voor het koppelen van gegevens van de ene tabel aan de andere gebruiken we
+gegevens die in beide tabellen aanwezig zijn. In de data die je hebt gekregen zijn
+dit de verbindingen:
+
+| **tabel kolom**            | **Verwijst naar**         |
+|:---------------------------|:--------------------------|
+| FiliaalID in tabel kassa   | ID in tabel filiaal       |
+| CategorieID in tabel kassa | ID in tabel categorie     |
+| Datum in tabel kassa       | Datum in tabel datumtabel |
+| FiliaalID in tabel budget  | ID in tabel filiaal       |
+
+De linke tussen de tabellen budget en datumtabel is lastiger omdat er niet één
+kolom de verbinding maakt, maar twee. De kolommen Jaar en Week in budget verwijzen
+naar JrNr en WkNr in de tabel budget.
+
+De linke tussen de tabellen budget en datumtabel is lastiger omdat er niet één
+kolom de verbinding maakt, maar twee. De kolommen Jaar en Week in budget verwijzen
+naar JrNr en WkNr in de tabel budget.
+
+Voor het gebruiken van meer dan één tabel voor je vraag, voeg je extra informatie
+toe tussen de `FROM` en de `WHERE` clausule. In eerste instantie maken we gebruik
+van de `INNER JOIN` clausule.
+
+Achter `INNER JOIN` voeg je de naam van de extra tabel toe. Daarna geef je achter
+`ON` de verbinding aan. Let op dat als je meer dan één tabel gebruikt je voor alle
+kolommen aan moet geven uit welke tabel de informatie moet komen.
+
+Hieronder het voorbeeld voor het opvragen van de locatie, de manager en het budget
+voor week 2 van alle filialen in Frankrijk.
+
+```{sql connection=database}
+SELECT Filiaal.Locatie
+    , Filiaal.Manager
+    , budget.Budget
+FROM Filiaal
+INNER JOIN Budget
+  ON  Budget.FiliaalID = Filiaal.ID
+WHERE Budget.Week = 2
+  AND Filiaal.Land = 'FR'
+```
+
+Vraag nu zelf de kassagegevens (jaarweek, datum, filiaal, kassa en bedrag) op van
+de maandag van week 24 van 2025. Gebruik daarvoor de datumtabel en de tabel kassa.
+
+**LET OP:**\
+Om de koppeling te leggen moet je de datum uit te tabel kassa omzetten naar tekst
+met de functie `date(kassa.datum, 'unixepoch')`. De datum in de tabel `datumtabel`
+is al als tekst opgeslagen.
+
+```{sql echo=FALSE, connection=database}
+--- SELECT
+--- FROM
+--- INNER JOIN
+---   ON
+--- WHERE
+```
