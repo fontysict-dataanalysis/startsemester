@@ -16,22 +16,22 @@ Voordat je met de materialen op deze site aan de slag gaat, raden we ten zeerste
 
 Helaas openen links niet standaard in een nieuwe tab, dus tip: gebruik altijd crtl-click (of een andere shortcut) om te openen in nieuw tab.
 
-## [Bepaal je persoonlijke programma]
+## Bepaal je persoonlijke programma
 
 Werkboeken van heel erg eenvoudig tot redelijk complex. Van een kennismaking met Markdown in Notebooks en basisvaardigheden in R tot complexere vraagstukken om met analyse, transformatie en visualisatie aan de slag te gaan, zelfs gecombineerd met SQL.
 
 Kijk op de [roadmap](roadmap.md) welke werkboeken aansluiten bij wat jij wilt leren.
 
-## [Howto's]
+## How-to's
 
 Diverse instructies om technisch inhoudelijke zaken aan te pakken, of om te starten met een onderwerp. Zie hier de [index van howto's](howto.md).
 
-## [Cheat sheets & andere externe bronnen voor het leren van R en SQL]
+## Cheat sheets & andere externe bronnen voor het leren van R en SQL
 
 Verzameling van cheat sheets en andere bronnen die handig kunnen zijn. Ze gaan soms wel vaak een stuk verder dan wat je in het startsemester nodig zult hebben, dus laat je daardoor niet verwarren!  
 Zie hier het [overzicht van nuttige cheat sheets en andere bronnen](cheeatsheets.md).
 
-## Bijdragen?
+## Bijdragen of opmerkingen?
 
-Pull requests zijn welkom!  
+Jouw ervaring, tips en truuks zijn welkom!  
 Neem voor grote wijzigingen even contact op via b.v. een issue om te bespreken wat je wilt wijzigen.
