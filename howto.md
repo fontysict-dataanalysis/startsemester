@@ -71,7 +71,7 @@ Installatie kan op 2 manieren:
 
   Klik op Install en vervolgens tik je de naam van de library in.\
 
-  <img src="assets/img/lib_install.png" width="200px">
+  <img src="assets/img/lib_install.png" width="400px">
 
 - Ben je iets meer nerd, wil je sneller aan de slag, of moet je eventuele installatie issues oplossen? Dan gebruik je uiteraard de console! Deze vind je standaard in het vak linksonder, en kun je ook altijd via het menu naar voren toveren als je dat vak per ongeluk uitgezet hebt.  
   In een `install.packages()` commando geef je dan aan welke library je wilt installeren, bijvoorbeeld:
