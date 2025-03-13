@@ -10,5 +10,5 @@ Voor deze opdracht is geen voorkennis vereist.
 
 ## Materialen
 
-[Notebook in R](/notebook/galgje.Rmd)
-[Dataset met gegevens van spelers](/dataset/Galgje.xlsx)
+- [Notebook in R](/notebook/galgje.Rmd)
+- [Dataset met gegevens van spelers](/dataset/Galgje.xlsx)

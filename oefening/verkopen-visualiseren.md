@@ -10,5 +10,5 @@ Het hebben van kennis over wat tabellen zijn en welke data er in kolommen zit is
 
 ## Materialen
 
-[Notebook in R](/notebook/verkopen-visualiseren.Rmd)
-[Dataset verkopen-visualiseren](/dataset/verkopen-visualiseren.xlsx)
+- [Notebook in R](/notebook/verkopen-visualiseren.Rmd)
+- [Dataset verkopen-visualiseren](/dataset/verkopen-visualiseren.xlsx)
