@@ -22,13 +22,13 @@ je met diverse databronnen wilt kunnen koppelen.\
 Ga je de verdieping ICT & Business doen, kies dan dit.\
 Je moet hier **2 stappen** voor doen, in deze volgorde:
 
-1.  Installeer de programmeertaal R.\
+1.  <ins>Installeer de programmeertaal R.</ins>\
     Dit is de zogenaamde 'interpreter' die R code kan uitvoeren. Via [deze
     site](https://cloud.r-project.org/) kom je bij de download pagina uit.
     Check vervolgens welk besturingssysteem je nodig hebt en pak de meest
     recente installer (.exe voor Windows of .pkg voor Mac)
 
-2.  Installeer de ontwikkelomgeving Rstudio.\
+2.  <ins>Installeer de ontwikkelomgeving Rstudio.</ins>\
     Dit is de user interface waarin je handig je Notebooks (werkbestanden) kan
     bewerken, net zoiets als Visual Studio. Je kunt Rstudio [hier
     vinden](https://rstudio.com/products/rstudio/download/). Let op dat je de
@@ -37,8 +37,12 @@ Je moet hier **2 stappen** voor doen, in deze volgorde:
 Let op: Je zult als je zelf installeert ook de juiste libraries moeten
 installeren! Zie [deze HowTo](#installeren-van-bibliotheken).
 
-Kom je er niet uit? [Er zijn voldoende tutorials te
-vinden](https://bfy.tw/QRhs).
+Kom je er niet uit? Er zijn voldoende tutorials te
+vinden:
+
+- [GitHub.io](https://rstudio-education.github.io/hopr/starting.html)
+- [GeeksForGeeks](https://www.geeksforgeeks.org/how-to-install-r-studio-on-windows-and-linux/)
+- [DataScience](https://datasciencepartners.nl/r-installeren/).
 
 ---
 
@@ -55,8 +59,8 @@ Omdat Notebooks geschikt zijn om over te dragen aan iemand anders en jouw bevind
 Goed gebruik is om dat meteen in het begin van je document te doen en daar 1 chunk te maken waarin je de setup doet. Zoiets als hieronder dus:
 
 ```
-`library("tidyverse")`
-`library("ggplot2")`
+library("tidyverse")
+library("ggplot2")
 ```
 
 Dan komt een lezer niet halverwege allerlei nieuwe libraries tegen en heb je een goed beeld van de benodigde afhankelijkheden.
@@ -128,7 +132,11 @@ Belangrijk hierbij is om te weten wat er dan eigenlijk gebeurt en wat je moet ch
 
 Voor de uitvoer exporteren naar PDF heb je een aparte package nodig. Heb je die niet geïnstalleerd, dan krijg je de volgende foutmelding:
 ![exporteren pdf](assets/img/export_pdf.png)  
-Installeer die package vanaf de console met het commando `tinytex::install_tinytex()`.
+Installeer die package vanaf de console met het commando
+
+```
+tinytex::install_tinytex()
+```
 
 Als je op Knit to _..._ klikt zie je de exportformaten waarin je uitvoer kan worden geëxporteerd:
 ![exporteren knit](assets/img/export_knit.png)  
