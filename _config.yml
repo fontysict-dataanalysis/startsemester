@@ -1,7 +1,7 @@
 # Site settings
-title: Good Clean Read
-tag_text: Good Clean Read
-description: A responsive template for publishing single-page websites, articles that are easy on the eyes
+title: Fontys ICT Data Analysis voor het Startsemester
+tag_text: Fontys ICT Data Analysis
+description: Een introductie voor studenten die geïnteresseerd zijn in dit onderwerp en zich willen oriënteren
 url: "https://fontysict-dataanalysis.github.io/" # base URL for your site ie. "https://www.example.com"
 baseurl: "/startsemester" # subpath for base of site, leave blank if hosting at root
 

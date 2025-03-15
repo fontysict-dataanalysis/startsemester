@@ -1,8 +1,7 @@
 ---
-layout: page
+layout: default
+title: Fontys ICT Data Analysis - Hoe te starten?
 ---
-
-## Hoe te starten?
 
 Op deze website staan een aantal werkboeken. Bij elk werkboek is de moeilijkheidsgraad aangegeven. Het is verstandig om te beginnen met eenvoudige werkboeken voordat je begint aan complexe opdrachten.
 

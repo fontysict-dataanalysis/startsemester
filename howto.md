@@ -1,5 +1,6 @@
 ---
-layout: page
+layout: default
+title: Fontys ICT Data Analysis - How to's
 ---
 
 # Inhoud

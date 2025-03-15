@@ -3,11 +3,9 @@ layout: default
 title: Fontys ICT Data Analysis - Cheat Sheats
 ---
 
-**Let op:**\
-Alles op deze pagina linkt naar een externe bron (het origineel).  
-Is een link stuk? Meldt het dan s.v.p.
-
-# Cheat sheets
+> **Let op:**\
+> Alles op deze pagina linkt naar een externe bron (het origineel).  
+> Is een link stuk? Meldt het dan s.v.p.
 
 We hebben hier een aantal handige cheat sheets op een rijtje gezet die je bijvoorbeeld kunt gebruiken als reminder.
 
