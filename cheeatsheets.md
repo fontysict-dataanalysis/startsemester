@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 **Let op:**\
 Alles op deze pagina linkt naar een externe bron (het origineel).  
 Is een link stuk? Meldt het dan s.v.p.

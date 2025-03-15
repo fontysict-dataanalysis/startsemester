@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 ---
 
 # Over deze site

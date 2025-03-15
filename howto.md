@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # Inhoud
 
 In deze howto pagina worden de volgende onderwerpen besproken:
