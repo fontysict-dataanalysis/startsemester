@@ -1,8 +1,9 @@
 ---
 layout: default
+titel: Over deze site
 ---
 
-## Over deze site
+### Over deze site
 
 > **Let op:\
 > Dit document is blijvend in ontwikkeling. Het is de bedoeling dat het wordt aangepast op de eisen en wensen van studenten.
@@ -27,11 +28,11 @@ Soms is het handig om een of meerdere kennismakingscursussen te doen. Bijvoorbee
 
 - [Datacamp](https://www.datacamp.com/) (Vraag je docent voor studententoegang)
 
-# Cheat sheets & andere externe bronnen voor het leren van R en SQL
+### Cheat sheets & andere externe bronnen voor het leren van R en SQL
 
 Verzameling van cheat sheets en andere bronnen die handig kunnen zijn. Ze gaan soms wel vaak een stuk verder dan wat je in het startsemester nodig zult hebben, dus laat je daardoor niet verwarren!  
 Zie hier het [overzicht van nuttige cheat sheets en andere bronnen](cheeatsheets.md).
 
-# Bijdragen of opmerkingen?
+### Bijdragen of opmerkingen?
 
 Jouw ervaring, tips en truuks zijn welkom! Je bent uitgenodigd om ook daarvoor contact op te nemen en met mij te bespreken.
