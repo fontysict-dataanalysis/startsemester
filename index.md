@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Fontys ICT Data Analysis - Over deze site
 ---
+
+# Over deze site
 
 > **Let op:\
 > Dit document is blijvend in ontwikkeling. Het is de bedoeling dat het wordt aangepast op de eisen en wensen van studenten.
