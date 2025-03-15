@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Over deze site
 
 Deze Github pages website bevat allerlei materialen die bedoeld zijn om wegwijs te worden in het startsemester van Fontys ICT en dan specifiek voor het onderwerp `data analysis`. De focus van deze materialen ligt op het gebied van data analyse en tranformatie met SQL en visualisatie met R studio.
