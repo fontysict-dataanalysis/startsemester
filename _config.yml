@@ -1,5 +1,13 @@
-theme: jekyll-theme-cayman
+# Site settings
+title: Good Clean Read
+tag_text: Good Clean Read
+description: A responsive template for publishing single-page websites, articles that are easy on the eyes
+url: "https://fontysict-dataanalysis.github.io/" # base URL for your site ie. "https://www.example.com"
+baseurl: "/startsemester" # subpath for base of site, leave blank if hosting at root
+
+font-awesome-include: true # make this false if you don't need font-awesome
+
 # Build settings
 markdown: kramdown
-#Analytics
-google_analytics: UA-191795617-1
+
+exclude: ["README.md"]
