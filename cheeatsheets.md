@@ -1,5 +1,6 @@
 ---
-layout: page
+layout: default
+title: Fontys ICT Data Analysis - Cheat Sheats
 ---
 
 **Let op:**\
