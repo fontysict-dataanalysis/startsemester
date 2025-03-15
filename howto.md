@@ -106,6 +106,8 @@ De workbooks bestaan uit 2 delen:
 - **Databestand (ZIP)**\
   Het databestand bestaat uit de Excel bestanden met de data en een R-studio notebook als rmd-bestand.
 
+Er is een verschil tussen het importeren van deze bestanden tussen de online versie en voor een lokale installatie. Hieronder worden de methodes toegelicht.
+
 - **Online versie:**\
   Heb je de online versie van R-studio, kies rechtsonder in het scherm voor de
   tab _Files_. Klik op de knop _Upload_. Browse naar de de map "downloads" en
