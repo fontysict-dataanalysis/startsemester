@@ -54,7 +54,7 @@ Op de FHICT RStudio server zijn de meeste libraries die je in de oriëntatie nod
 
 Omdat Notebooks geschikt zijn om over te dragen aan iemand anders en jouw bevindingen te reproduceren, moet die persoon ook weten welke libraries je daarvoor gebruikt hebt. Daarom laad je in ieder Notebook expliciet de benodigde libraries in.
 
-## Verwijzen naar bibliotheken
+### Verwijzen naar bibliotheken
 
 Goed gebruik is om dat meteen in het begin van je document te doen en daar 1 chunk te maken waarin je de setup doet. Zoiets als hieronder dus:
 
@@ -67,7 +67,7 @@ Dan komt een lezer niet halverwege allerlei nieuwe libraries tegen en heb je een
 
 Als je losse chunks uitvoert in je Notebook is het handig om erop te letten dat je 'alles wat je nodig hebt' in een bepaalde chunk van te voren uitvoert.
 
-## Installeren nieuwe bibliotheken
+### Installeren nieuwe bibliotheken
 
 Krijg je een melding in je Notebook in de richting van `could not find..` of `could not load..` en heb je volgens jou wel de juiste library al opgenomen in je Notebook, dan heb je dikke kans dat je een library mist waaruit je functionaliteit probeert te gebruiken.
 
