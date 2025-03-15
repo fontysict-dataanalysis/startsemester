@@ -3,7 +3,7 @@ layout: default
 title: Fontys ICT Data Analysis - How to's
 ---
 
-### How to's: Inhoud
+## How to's: Inhoud
 
 In deze howto pagina worden de volgende onderwerpen besproken:
 
@@ -14,7 +14,7 @@ In deze howto pagina worden de volgende onderwerpen besproken:
 
 ---
 
-### Locale installatie van R studio
+## Locale installatie van R studio
 
 Een locale installatie van R-studio aan te raden als je zelf controle wilt over welke libraries je wilt
 kunnen installeren, je lokale bestanden makkelijk wilt kunnen gebruiken en als
@@ -46,7 +46,7 @@ vinden:
 
 ---
 
-### Installeren van bibliotheken
+## Installeren van bibliotheken
 
 Bibliotheken zijn setjes voorgedefinieerde functionaliteit in R. Zie Rstudio als een kale Word of Excel, waarbij je de ribbon vult met knoppen door zelf libraries (of packages zoals programmeurs zeggen) toe te voegen. Libraries installeren hoef je alleen te doen als je RStudio zelf geïnstalleerd hebt op je eigen machine, of als je op RStudio Cloud werkt.
 
@@ -54,7 +54,7 @@ Op de FHICT RStudio server zijn de meeste libraries die je in de oriëntatie nod
 
 Omdat Notebooks geschikt zijn om over te dragen aan iemand anders en jouw bevindingen te reproduceren, moet die persoon ook weten welke libraries je daarvoor gebruikt hebt. Daarom laad je in ieder Notebook expliciet de benodigde libraries in.
 
-#### Verwijzen naar bibliotheken
+## Verwijzen naar bibliotheken
 
 Goed gebruik is om dat meteen in het begin van je document te doen en daar 1 chunk te maken waarin je de setup doet. Zoiets als hieronder dus:
 
@@ -67,7 +67,7 @@ Dan komt een lezer niet halverwege allerlei nieuwe libraries tegen en heb je een
 
 Als je losse chunks uitvoert in je Notebook is het handig om erop te letten dat je 'alles wat je nodig hebt' in een bepaalde chunk van te voren uitvoert.
 
-#### Installeren nieuwe bibliotheken
+## Installeren nieuwe bibliotheken
 
 Krijg je een melding in je Notebook in de richting van `could not find..` of `could not load..` en heb je volgens jou wel de juiste library al opgenomen in je Notebook, dan heb je dikke kans dat je een library mist waaruit je functionaliteit probeert te gebruiken.
 
@@ -90,7 +90,7 @@ Installatie kan op 2 manieren:
 
 ---
 
-### Notebook en data importeren
+## Notebook en data importeren
 
 In R gebruiken we eigenlijk altijd zogenaamde Notebooks. Dat zijn .Rmd (RMarkdown)
 bestanden waar je uitleg, code (chunks) & output samen kunt voegen. Dit zorgt o.a.
@@ -125,7 +125,7 @@ De workbooks bestaan uit 2 delen:
 
 ---
 
-### Notebooks exporteren
+## Notebooks exporteren
 
 Je kunt via R studio je Notebooks naar verschillende bestandsformaten: als HTML file of als PDF.
 Belangrijk hierbij is om te weten wat er dan eigenlijk gebeurt en wat je moet checken.

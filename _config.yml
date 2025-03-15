@@ -1,10 +1,9 @@
 # Site settings
 title: Fontys ICT Data Analysis voor het Startsemester
-tag_text: Fontys ICT Data Analysis
+tag_text: Fontys ICT: Data Analysis
 description: Een introductie voor studenten die geïnteresseerd zijn in dit onderwerp en zich willen oriënteren
 url: "https://fontysict-dataanalysis.github.io/" # base URL for your site ie. "https://www.example.com"
 baseurl: "/startsemester" # subpath for base of site, leave blank if hosting at root
-
 font-awesome-include: true # make this false if you don't need font-awesome
 
 # Build settings

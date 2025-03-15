@@ -3,12 +3,12 @@ layout: default
 titel: Over deze site
 ---
 
-## Over deze site
-
 > **<ins>Let op:</ins>**\
 > Dit document is blijvend in ontwikkeling. Het is de bedoeling dat het wordt aangepast op de eisen en wensen van studenten.
 > Dat betekent dat er onderdelen gewijzigd worden en/of er aan worden toegevoegd. Mocht je als lezer ruimte voor verbetering zien, neem dan contact op met [de schrijver](mailto:k.velthuijs@fontys.nl).\
 > **Alvast bedankt!**
+
+## Over deze site
 
 Deze Github pages website bevat allerlei materialen die bedoeld zijn om wegwijs te worden in het startsemester van Fontys ICT en dan specifiek voor het onderwerp `data analysis`. De focus van deze materialen ligt op het gebied van data analyse en tranformatie met SQL en visualisatie met R studio.
 
@@ -28,10 +28,10 @@ Soms is het handig om een of meerdere kennismakingscursussen te doen. Bijvoorbee
 
 - [Datacamp](https://www.datacamp.com/) (Vraag je docent voor studententoegang)
 
-## Cheat sheets & andere externe bronnen voor het leren van R en SQL
+## Cheat sheets & andere bronnen
 
-Verzameling van cheat sheets en andere bronnen die handig kunnen zijn. Ze gaan soms wel vaak een stuk verder dan wat je in het startsemester nodig zult hebben, dus laat je daardoor niet verwarren!  
-Zie hier het [overzicht van nuttige cheat sheets en andere bronnen](cheeatsheets.md).
+Verzameling van cheat sheets en andere bronnen die handig kunnen zijn. Denk dan vooral verwijzingen naar informatie over SQL en R. Ze gaan soms wel vaak een stuk verder dan wat je in het startsemester nodig zult hebben, dus laat je daardoor niet verwarren!  
+Zie hier voor [meer informatie](cheeatsheets.md).
 
 ## Bijdragen of opmerkingen?
 

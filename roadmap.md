@@ -1,8 +1,9 @@
 ---
 layout: default
+titel: Roadmap
 ---
 
-### Hoe te starten? Een roadmap.
+## Hoe te starten? Een roadmap.
 
 Op deze website staan een aantal werkboeken. Bij elk werkboek is de moeilijkheidsgraad aangegeven. Het is verstandig om te beginnen met eenvoudige werkboeken voordat je begint aan complexe opdrachten.
 
