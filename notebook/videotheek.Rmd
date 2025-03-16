@@ -1,0 +1,534 @@
+---
+title: "Videotheek"
+subtitle: "Eerste opdrachten voor data analyse met SQL en R."
+author: Kees Velthuijs
+date: "februari 2025"
+email: "k.velthuijs@fontys.nl"
+
+fontfamily: cmbright
+fontsize: 9pt
+
+toc: true 
+toc_depth: 3
+number_sections: true
+
+theme: united
+highlight: tango
+
+editor_options:
+  markdown:
+    wrap: 82
+    canonical: true
+    
+output:
+  pdf_document:
+    keep_tex: true
+    fig_caption: yes
+    latex_engine: pdflatex
+    number_sections: true
+---
+
+# inleiding
+
+Vroeger was er zoiets als een videotheek, waar je videobanden en later dvd's en
+blueray's kon huren. Tegenwoordig kun je films online "huren" op verschillende
+plekken.\
+We stappen in een tijdmachine en gaan terug in de tijd naar een
+videoverhuurbedrijf waar ze videobanden verhuren.
+
+# Voorbereiding
+
+## Benodigde bibliotheken
+
+Laad de nodige bibliotheken voor de verwerking van de data:
+
+-   tidyr
+-   tidyverse
+-   dplyr
+-   ggplot2
+-   readxl
+-   RSQLite
+-   lubridate
+
+```{r Ophalen bibliotheken, fig.cap="Laden bibliotheken", message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+library(tidyverse)  # bibliotheek voor datamanipulatie in R studio
+library(dplyr)      # bibliotheek voor het groeperen en samenvatten van dataframes in R
+library(ggplot2)    # bibliotheek voor het weergeven van data in grafieken
+library(readxl)     # bibliotheek Voor het inlezen van data uit Excel
+library(RSQLite)    # Ondersteuning van SQLite databases in memory
+library(lubridate)  # bibliotheek voor het interpreteren van datums, tijden en periodes 
+```
+
+## Inlezen van de bestanden
+
+```{r Inladen data in SQLite database, fig.cap="Laden bestanden", message=FALSE, warning=FALSE, include=FALSE}
+# online installatie: weghalen als gebruik wordt gemaakt van de rstudio in de online versie
+# lokale installatie: pad aanpassen naar de locatie waar de databestanden zijn gedownload en uitgepakt 
+
+setwd('~/R/Datasets/Videotheek/')
+database <- DBI::dbConnect(RSQLite::SQLite(), ":memory:")
+copy_to(database, name="Acteur",
+        df = read_excel('Acteur.xlsx'))
+copy_to(database, name="Band",
+        df = read_excel('Band.xlsx'))
+copy_to(database, name="Film",
+        df = read_excel('Film.xlsx'))
+copy_to(database, name="Lid",
+        df = read_excel('lid.xlsx'))
+copy_to(database, name="Rol",
+        df = read_excel('Rol.xlsx'))
+copy_to(database, name="Regiseur",
+        df = read_excel('Regiseur.xlsx'))
+```
+
+\newpage
+
+# Opdrachten
+
+## Film 1
+
+1.  Geef de titel en de speelduur van alle Westerns op volgorde van titel.
+
+```{sql connection=database}
+
+```
+
+2.  Welke films zijn er gemaakt over Batman? Geef de titel.
+
+```{sql connection=database}
+
+```
+
+3.  Welke films zijn geregisseerd door regisseur 161? Geef titel, speelduur en
+    jaar.
+
+```{sql connection=database}
+
+```
+
+4.  Welke films voorzien in een kinderbegeleiding tot 15-jaar? Geef titel en
+    genre. Sorteer op genre. (zie [Film rating](https://www.filmratings.com/) voor
+    een uitleg over de beoordeling van films
+
+```{sql connection=database}
+
+```
+
+5.  Welke films werden tussen 1988 en 1990 gemaakt? Geef titel en regisseurnummer.
+    Sorteer op regisseurnummer.
+
+```{sql connection=database}
+
+```
+
+6.  Welke films werden voor 1940 gemaakt en zijn in kleur opgenomen? Geef filmnr,
+    titel en jaar.
+
+```{sql connection=database}
+
+```
+
+7.  Hoe lang duurde de film Gone with the wind?
+
+```{sql connection=database}
+
+```
+
+8.  Geef de verschillende filmmaatschappijen alfabetische gerangschikt.
+
+```{sql connection=database}
+
+```
+
+9.  Welke films zijn tussen 1950 en 1960 in zwart-wit gemaakt en hebben een
+    4-sters waardering? Geef titel, waardering, kleur en jaar.
+
+```{sql connection=database}
+
+```
+
+10. Welke titels hebben een 1-ster-waardering?
+
+```{sql connection=database}
+
+```
+
+11. Welke films hebben een speelduur van 80 tot 100 minuten? Geef titel en genre.
+
+```{sql connection=database}
+
+```
+
+12. Van welke film is de kleur niet bekend?
+
+```{sql connection=database}
+
+```
+
+13. Welke films hebben de substring co (niet hoofdlettergevoelig) in hun titel?
+    Geef de titel.
+
+```{sql connection=database}
+
+```
+
+14. Geef de filmnummers en titels van alle films met een 5-ster waardering.
+    Sorteer op titel.
+
+```{sql connection=database}
+
+```
+
+15. Geef filmnummer, genre en titel van alle films waar een ouderbegeleiding
+    geldt. Sorteer het overzicht naar genre en daarbinnen naar titel
+
+```{sql connection=database}
+
+```
+
+naar titel.
+
+16. Geef het filmnummer en de titel van alle films die behoren tot het genre
+    Oorlog, Religieus, Rampen of Mysterie.
+
+```{sql connection=database}
+
+```
+
+17. Welke leden uit Lieshout zijn sinds wanneer lid?
+
+```{sql connection=database}
+
+```
+
+18. Welke leden hebben een bonuswaardering van drie? Geef naam en woonplaats.
+
+```{sql connection=database}
+
+```
+
+19. Wat is kortste en langste speelduur van alle aanwezige titels?
+
+```{sql connection=database}
+
+```
+
+20. Hoeveel films hebben geen nominaties gehad?
+
+```{sql connection=database}
+
+```
+
+21. Wat is de gemiddelde speelduur van Science fiction-films?
+
+```{sql connection=database}
+
+```
+
+22. Hoe luiden de filmtitels die alfabetisch gezien het eerst en het laatst
+    voorkomen?
+
+```{sql connection=database}
+
+```
+
+23. Wat is volgens de tabel 'Lid' de gemiddelde bonus in Eindhoven?
+
+```{sql connection=database}
+
+```
+
+## Film 2
+
+1.  Hoeveel filmtitels bestaan er per waardering?
+
+```{sql connection=database}
+
+```
+
+2.  Hoeveel filmtitels bestaan er binnen elk genre? Sorteer naar hoeveelheid.
+
+```{sql connection=database}
+
+```
+
+3.  Hoeveel kleurenfilms en zwartwitfilms zijn er?
+
+```{sql connection=database}
+
+```
+
+4.  Geef per kleur aan hoeveel films van het genre Horror er zijn.
+
+```{sql connection=database}
+
+```
+
+5.  Hoeveel films van het genre Comedie zijn er en hoeveel nominaties hebben zij
+    in totaal gekregen?
+
+```{sql connection=database}
+
+```
+
+6.  Binnen welke genres zijn tussen de 10 en de 20 films gemaakt? Geef genre en
+    aantal. Sorteer het overzicht tevens op oplopend aantal.
+
+```{sql connection=database}
+
+```
+
+7.  Van welke genres geldt dat zij in totaal tussen de 30 en de 40 nominaties
+    hebben gekregen? Geef een alfabetische rangschikking naar genre en vermeld
+    tevens het aantal nominaties.
+
+```{sql connection=database}
+
+```
+
+8.  Welke filmmaatschappijen hebben voor al hun films meer dan 20 nominaties
+    gekregen? Geef de maatschappijen in volgorde van het aantal verkregen
+    nominaties.
+
+```{sql connection=database}
+
+```
+
+9.  Welke maatschappijen hebben meer dan 10 kleurenfilms gemaakt? Geef
+    maatschappij en bijbehorend aantal, oplopend gerangschikt.
+
+```{sql connection=database}
+
+```
+
+10. Geef het aantal verschillende waarderingen van de films uit het genre
+    Tekenfilm.
+
+```{sql connection=database}
+
+```
+
+11. Hoeveel leden per woonplaats genieten een bonus? Geef woonplaats en aantal en
+    sorteer op woonplaats.
+
+```{sql connection=database}
+
+```
+
+12. Hoeveel leden per woonplaats zijn er?
+
+```{sql connection=database}
+
+```
+
+## Film 3
+
+1.  Hoe luidt de langste filmtitel?
+
+```{sql connection=database}
+
+```
+
+2.  Welke films behoren tot hetzelfde genre als de film 'Batman'?
+
+```{sql connection=database}
+
+```
+
+3.  Welke films duren even lang als de film El Cid en behoren tot hetzelfde genre?
+
+```{sql connection=database}
+
+```
+
+4.  Welke films hebben regisseurs die oorlogfilms gemaakt hebben, nog meer
+    gemaakt? Geef het regisseurnummer, filmtitel en het genre en sorteer daarbij
+    op regisseurnummer.
+
+```{sql connection=database}
+
+```
+
+5.  Geef de titel en de speelduur van de langste Tekenfilm.
+
+```{sql connection=database}
+
+```
+
+6.  Geef het genre, de titel en de speelduur van alle films die binnen hun genre
+    het langst zijn. Sorteer op genre en daarbinnen op titel.
+
+```{sql connection=database}
+
+```
+
+7.  Welke films, gemaakt voor 1940, zijn net zo lang als de kortste Western die
+    tussen 1950 en 1960 is gemaakt?
+
+```{sql connection=database}
+
+```
+
+8.  Welke leden zijn het kortst lid? Geef naam en datum toetreding.
+
+```{sql connection=database}
+
+```
+
+9.  Welke leden zijn het langst lid? Geef naam en datum toetreding.
+
+```{sql connection=database}
+
+```
+
+10. Welke films zijn door Don Siegel geregisseerd? Geef titel.
+
+```{sql connection=database}
+
+```
+
+11. Welke regisseur regisseerde de film Cliffhanger?
+
+```{sql connection=database}
+
+```
+
+12. Welke na-oorlogse regisseurs hebben nog nooit actiefilms gemaakt? Geef naam
+    regisseur.
+
+```{sql connection=database}
+
+```
+
+13. Welke regisseurs hebben UITSLUITEND actiefilms gemaakt? Geef naam regisseur.
+
+```{sql connection=database}
+
+```
+
+14. Welke films hebben al meer opgebracht dan €125, door verhuur, als we aannemen
+    dat de gemiddelde verhuurprijs €5, per keer bedraagt.
+
+```{sql connection=database}
+
+```
+
+15. Welke films zijn nog niet uitgebracht op band?
+
+```{sql connection=database}
+
+```
+
+16. Welke acteurs zijn ook regisseurs? Geef een alfabetische namenlijst.
+
+```{sql connection=database}
+
+```
+
+17. Welke acteurs, geboren na 1960, hebben nog nooit een rol gespeeld in een
+    horrorfilm? Geef naam en geboortejaar. Sorteer het overzicht op geboortejaar
+    en daarbinnen op naam.
+
+```{sql connection=database}
+
+```
+
+18. Welke leden huren op dit moment films van het genre Drama?
+
+```{sql connection=database}
+
+```
+
+19. Welke leden huren op dit moment UITSLUITEND films van het genre Drama?
+
+```{sql connection=database}
+
+```
+
+20. Wie zijn de jongste regisseurs? Geef naam en geboortejaar.
+
+```{sql connection=database}
+
+```
+
+21. Welke overleden regisseur is de oudste van allen? Geef de naam en de leeftijd.
+
+```{sql connection=database}
+
+```
+
+22. Onderzoek of alle banden met daarop een kopie van de film: This Is The Army
+    verhuurd zijn.
+
+```{sql connection=database}
+
+```
+
+23. Geef de naam van de regisseur en de titel van zijn/haar films van het genre
+    Horror.
+
+```{sql connection=database}
+
+```
+
+24. Geef de naam, het telefoonnummer en de titel van alle films die lid 752 op dit
+    moment huurt.
+
+```{sql connection=database}
+
+```
+
+25. Welke acteurs spelen in welke films, die gehuurd worden door het lid T.
+    Rexanus? Geef titel en namen acteurs.
+
+```{sql connection=database}
+
+```
+
+26. Geef de titel en de rolnaam van alle films waarin acteur Michael Douglas
+    gespeeld heeft.
+
+```{sql connection=database}
+
+```
+
+27. Welke acteurs, die meespeelden in de film The Sting, zijn overleden? Geef naam
+    acteur en zijn leeftijd.
+
+```{sql connection=database}
+
+```
+
+28. Wie speelde in welke film de rol van Buffalo Bill?
+
+```{sql connection=database}
+
+```
+
+29. In welke, door hen zelf geregisseerde films, spelen de regisseurs een
+    rol(letje)? Geef naam regisseur, de titel van de film en de rolnaam die zij in
+    hun film speelde.
+
+```{sql connection=database}
+
+```
+
+30. Wat is de langste film, uitgebracht door Warner Bros, waarin Sylvester
+    Stallone een rol heeft?
+
+```{sql connection=database}
+
+```
+
+31. Welke thrillers worden slechts op 1 band uitgebracht? Sorteer het overzicht op
+    titel.
+
+```{sql connection=database}
+
+```
+
+32. Van welke regisseurs zijn drie of meer films bekend?
+
+```{sql connection=database}
+
+```

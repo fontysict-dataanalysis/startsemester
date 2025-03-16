@@ -1,4 +1,7 @@
-
+---
+layout: default
+titel: De Rode Schoentjes
+---
 
 ## De Rode Schoentjes
 
