@@ -16,9 +16,9 @@ Het oefenen van basis SQL commando's in een database met meerdere tabellen.
 
 ### <span><img class="inline-h2-icon" src="../assets/svg/download.svg" /> Materialen</span>
 
-- [Database](../dataset/Film.zip) in deze zip staan de databestanden in Excel formaat.
-- [Notebook start](../notebook/videotheek.Rmd) In het notebook is het inlezen van de bestanden opgenomen en er zijn al chunks aangemaakt voor alle opdrachten.
-- \*\*<ins>Verwachte uitkomsten</ins>\
-   [Film 1](../werkboek/Films-1.pdf)\
-   [Film 2](../werkboek/Films-2.pdf)\
-   [Film 3](../werkboek/Films-3.pdf)
+- [Database](../dataset/Film.zip) een zip-bestand met alle databestanden in Excel formaat.
+- [Notebook](../notebook/videotheek.Rmd) In het notebook is het inlezen van de bestanden opgenomen en er zijn al chunks aangemaakt voor alle opdrachten.
+- \*\*<ins>Verwachte uitkomsten</ins>\*\*\
+   [Opdrachten van film deel 1](../werkboek/Films-1.pdf)\
+   [Opdrachten van film deel 2](../werkboek/Films-2.pdf)\
+   [Opdrachten van film deel 3](../werkboek/Films-3.pdf)
