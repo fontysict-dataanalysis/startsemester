@@ -291,13 +291,22 @@ pre > code {
   padding: 3px 10px;
 }
 
-.color-red {
+.bg-red {
   background-color:#d94400 !important;
 }
-.color-blue {
+.bg-blue {
   background-color:#0074d9 !important;
 }
-.color-green {
+.bg-green {
   background-color:#009044 !important;
+}
+.fg-red {
+  color:#d94400 !important;
+}
+.fg-blue {
+  color:#0074d9 !important;
+}
+.fg-green {
+  color:#009044 !important;
 }
 
