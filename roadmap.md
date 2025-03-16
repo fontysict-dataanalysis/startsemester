@@ -15,7 +15,7 @@ Op deze website staan een aantal werkboeken. Bij elk werkboek is de moeilijkheid
 | [**Galgje**](/oefening/galgje.md) (\*) |
 | Een dataset van het woordspelletje dat je vast wel kent. Via het spelletje zijn gegevens verzameld van leerlingen van de basisschool en de eerste jaren van het middelbaar onderwijs. Vertaal de inzichten naar tabellen en grafieken waar de docenten iets mee kunnen. <span class="pills"><span class="pill">SQL</span><span class="pill">R</span></span> |
 | [**De Rode Schoentjes**](/oefening/de-rode-schoentjes.md) (\*\*\*) |
-| De schoenenwinkel van De Rode Schoentjes verkoopt in verschillende landen schoenen. Vertaal gegevens van de kassa naar zinvolle informatie aan het management. <span class="pills"><span class="pill">SQL</span></span> | |
+| De schoenenwinkel van De Rode Schoentjes verkoopt in verschillende landen schoenen. Vertaal gegevens van de kassa naar zinvolle informatie aan het management. <span class="pills"><span class="pill">SQL</span></span> |
 | [**Videotheek**](/oefening/videotheek.md) (\*\*\*\*) |
 | In de jaren 80 en 90 was er zoiets als een videotheek. Dat was een plaats waar je videobanden en later dvd's en blueray's kon huren. Tegenwoordig kun je films zo makkelijk online "huren" op verschillende plekken, dat er geen videotheken meer zijn. We stappen in een tijdmachine en gaan terug in de tijd naar een videoverhuurbedrijf waar ze videobanden verhuren.
 <span class="pills"><span class="pill">SQL</span></span> |
