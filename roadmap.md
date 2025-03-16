@@ -19,7 +19,7 @@ Op deze website staan een aantal werkboeken. Bij elk werkboek is de moeilijkheid
 
 > Achter de naam van het werkboek staat aangegeven hoe moeilijk de opdracht is. Daarbij wordt de volgende indeling gebruikt: 
 
-> | :------------------------------------------------------ |:-----------:|
+> | :------ |:-------------------------------------:|
 > | n00b        | <span> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /></span> |
 > | amateur     | <span> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /></span> |  
 > | intermediate| <span> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /> </span>      |  
