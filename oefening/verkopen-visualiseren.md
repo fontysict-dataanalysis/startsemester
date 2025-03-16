@@ -1,4 +1,9 @@
-# Verkopen
+---
+layout: default
+titel: Verkopen visualiseren
+---
+
+# Verkopen visualiseren
 
 ### <span><img class="inline-h2-icon" src="../assets/svg/crosshairs.svg" /> Doel</span>
 

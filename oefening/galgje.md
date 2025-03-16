@@ -1,3 +1,7 @@
+---
+layout: default
+titel: Galgje
+---
 # Galgje
 
 ### <span><img class="inline-h2-icon" src="../assets/svg/crosshairs.svg" /> Doel</span>
