@@ -71,13 +71,6 @@ h2 {
   text-align: left;
 }
 
-.inline-h2-icon {
-  height: 1.4rem;
-  display: inline-flex !important;
-  margin: 0rem !important;
-  border: none !important;
-}
-
 @media (min-width: 30rem) {
   h2 {
     margin-top: 2.5rem;
@@ -308,5 +301,19 @@ pre > code {
 }
 .fg-green {
   color:#009044 !important;
+}
+
+.inline-h2-icon {
+  height: 1.4rem;
+  display: inline-flex !important;
+  margin: 0rem !important;
+  border: none !important;
+}
+
+.inline-icon {
+  height: 1rem;
+  display: inline-flex !important;
+  margin: 0rem !important;
+  border: none !important;
 }
 
