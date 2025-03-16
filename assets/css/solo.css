@@ -71,10 +71,10 @@ h2 {
   text-align: left;
 }
 
-.h2icon {
-  height: 2rem;
-  margin: 0px !important;
+.inline-h2-icon {
+  height: 1.4rem;
   display: inline-flex !important;
+  margin: 0px 0px 0px -1rem !important;
 }
 
 @media (min-width: 30rem) {
