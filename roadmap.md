@@ -18,7 +18,8 @@ Op deze website staan een aantal werkboeken. Bij elk werkboek is de moeilijkheid
 | [**De Rode Schoentjes**](/oefening/de-rode-schoentjes.md)                                                                                                                                                                                                                                                                                                                 |  _SQL_, _R_   |    \*\*\*     |
 | De schoenenwinkel van De Rode Schoentjes verkoopt in verschillende landen schoenen. Vertaal gegevens van de kassa naar zinvolle informatie aan het management.                                                                                                                                                                                                            |               |               |
 
-> In de kolom _Moeilijk_ staat aangegeven hoe moeilijk ze zijn. Daarbij wordt de volgende indeling gebruikt: \* = n00b  
+> In de kolom _Moeilijk_ staat aangegeven hoe moeilijk ze zijn. Daarbij wordt de volgende indeling gebruikt: \
+> \* = n00b  
 >  \*\* = amateur  
 >  \*\*\* = intermediate  
 >  \*\*\*\* = advanced  
