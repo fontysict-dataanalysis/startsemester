@@ -17,8 +17,8 @@ Op deze website staan een aantal werkboeken. Bij elk werkboek is de moeilijkheid
 | [**Videotheek**](/oefening/videotheek.md) <span> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /> <img class="inline-icon fg-red" src="./assets/svg/star.svg" />  <img class="inline-icon fg-red" src="./assets/svg/star.svg" /></span> |
 | In de jaren 80 en 90 was er zoiets als een videotheek. Dat was een plaats waar je videobanden en later dvd's en blueray's kon huren. Tegenwoordig kun je films zo makkelijk online "huren" op verschillende plekken, dat er geen videotheken meer zijn. We stappen in een tijdmachine en gaan terug in de tijd naar een videoverhuurbedrijf waar ze videobanden verhuren. <span class="pills"><span class="pill bg-blue">SQL</span></span> |
 
-> | Achter de naam van het werkboek staat aangegeven hoe moeilijk de opdracht is. Daarbij wordt de volgende indeling gebruikt: ||
 > | :------ |:-------------------------------------:|
+> | Achter de naam van het werkboek staat aangegeven hoe moeilijk de opdracht is. Daarbij wordt de volgende indeling gebruikt: ||
 > | n00b        | <span> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /></span> |
 > | amateur     | <span> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /></span> |  
 > | intermediate| <span> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /> </span>      |  
