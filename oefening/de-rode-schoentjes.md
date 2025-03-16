@@ -16,6 +16,6 @@ Het werkboek begint met de basis van SQL. Heb je al enige kennis van de SQL comm
 
 ### <i class="fa-solid fa-download"></i>Materialen
 
-- [Voorbeeld werkboek als pdf](/werkboek/de-rode-schoentjes.pdf)
-- [Werkboek in R](/notebook/de-rode-Schoentjes.Rmd)
-- [Dataset als Zip-bestand](/dataset/Rode%20Schoentjes.zip)
+- [Voorbeeld werkboek als pdf](../werkboek/de-rode-schoentjes.pdf)
+- [Werkboek in R](../notebook/de-rode-Schoentjes.Rmd)
+- [Dataset als Zip-bestand](../dataset/Rode%20Schoentjes.zip)
