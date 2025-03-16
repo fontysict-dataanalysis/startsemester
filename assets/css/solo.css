@@ -274,3 +274,19 @@ pre > code {
 .sharing-buttons {
 	width: 100%;
 }
+
+.pills {
+  display: block;
+}
+
+.pill {
+  font-size: small;
+  font-weight: bold;
+  color: #e8e8e8;
+  background-color: #0074d9;
+  border-color: darkblue;
+  border-width: 2px;
+  border-radius: 8px;
+  margin-right: 0.4rem;
+  padding: 3px 10px;
+}
