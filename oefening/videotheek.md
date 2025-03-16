@@ -9,6 +9,12 @@ titel: Videotheek
 
 Het oefenen van basis SQL commando's in een database met meerdere tabellen.
 
+De opdracht is in drie niveaus:
+
+1. Basis SQL statements
+2. Wat ingewikkeldere SQL statements
+3. SQL statements met JOIN en sub-queries
+
 ### <span><img class="inline-h2-icon" src="../assets/svg/brain.svg" /> Voorkennis</span>
 
 - SQL basis (select, from, where, distinct, in, not, null, between, like, and, or, not & basisfuncties rekenen: max, min, count, sum, avg).
