@@ -283,10 +283,21 @@ pre > code {
   font-size: small;
   font-weight: bold;
   color: #e8e8e8;
-  background-color: #0074d9;
-  border-color: darkblue;
+  background-color: #666;
+  border-color: #555;
   border-width: 2px;
   border-radius: 8px;
   margin-right: 0.4rem;
   padding: 3px 10px;
 }
+
+.color-red {
+  background-color:#d94400 !important;
+}
+.color-blue {
+  background-color:#0074d9 !important;
+}
+.color-green {
+  background-color:#009044 !important;
+}
+
