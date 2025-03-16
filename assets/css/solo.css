@@ -295,7 +295,7 @@ pre > code {
 }
 .fg-red {
   color:#d94400 !important;
-  filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg) brightness(94%) contrast(117%);
+  filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg) brightness(80%) contrast(117%);
 }
 .fg-blue {
   color:#0074d9 !important;
