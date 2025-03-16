@@ -7,7 +7,7 @@ titel: Roadmap
 
 Op deze website staan een aantal werkboeken. Bij elk werkboek is de moeilijkheidsgraad aangegeven. Het is verstandig om te beginnen met eenvoudige werkboeken voordat je begint aan complexe opdrachten.
 
-| **werkboek**                                            |
+| ## WERKBOEK                                            |
 | :------------------------------------------------------ |
 | [**Verkopen**](/oefening/verkopen-visualiseren.md) (\*) |
 | Vertaal een beperkte dataset met verkopen per vertegenwoordiger naar informatie en kijk hoe je die het duidelijkst kunt visualiseren. <span class="pills"><span class="pill">SQL</span><span class="pill">R</span></span> |
