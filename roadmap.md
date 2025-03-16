@@ -10,8 +10,7 @@ Op deze website staan een aantal werkboeken. Bij elk werkboek is de moeilijkheid
 | **werkboek**                                            |
 | :------------------------------------------------------ |
 | [**Verkopen**](/oefening/verkopen-visualiseren.md) (\*) |
-| Vertaal een beperkte dataset met verkopen per vertegenwoordiger naar informatie en kijk hoe je die het duidelijkst kunt visualiseren.
-<span class="pills"><span class="pill">SQL</span><span class="pill">R</span></span> |
+| Vertaal een beperkte dataset met verkopen per vertegenwoordiger naar informatie en kijk hoe je die het duidelijkst kunt visualiseren. <span class="pills"><span class="pill">SQL</span><span class="pill">R</span></span> |
 | [**Galgje**](/oefening/galgje.md) (\*) |
 | Een dataset van het woordspelletje dat je vast wel kent. Via het spelletje zijn gegevens verzameld van leerlingen van de basisschool en de eerste jaren van het middelbaar onderwijs. Vertaal de inzichten naar tabellen en grafieken waar de docenten iets mee kunnen. <span class="pills"><span class="pill">SQL</span><span class="pill">R</span></span> |
 | [**De Rode Schoentjes**](/oefening/de-rode-schoentjes.md) (\*\*\*) |
