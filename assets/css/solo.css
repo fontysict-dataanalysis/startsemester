@@ -162,7 +162,7 @@ word-wrap: break-word;
   border-color: #999;
   border-width: 1px;
   max-width: 75%;
-  margin-top:-1rem;
+  margin-top:0rem;
 }
 
 @media (max-width: 635px) {
