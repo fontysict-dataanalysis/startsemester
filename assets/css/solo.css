@@ -156,9 +156,9 @@ word-wrap: break-word;
 }
 
 .container img {
-  margin: 2em auto 2em auto;
-  align-items: start;
-  display: block;
+  border: solid;
+  border-color: #999;
+  border-width: 1px;
   max-width: 75%;
 }
 
