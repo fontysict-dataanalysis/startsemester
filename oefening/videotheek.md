@@ -12,6 +12,7 @@ Het oefenen van basis SQL commando's in een database met meerdere tabellen.
 ### <span><img class="inline-h2-icon" src="../assets/svg/brain.svg" /> Voorkennis</span>
 
 - SQL basis (select, from, where, distinct, in, not, null, between, like, and, or, not & basisfuncties rekenen: max, min, count, sum, avg).
+
   **Tip**: Kijk bij de [Howto's](../howto.md) en [Cheatsheets](../cheeatsheets.md) als je ergens niet uit komt. Je mag natuurlijk ook AI, zoals ChatGPT of co-pilot gebruiken, maar controleer of hun wel correct is.
 
 ### <span><img class="inline-h2-icon" src="../assets/svg/download.svg" /> Materialen</span>
