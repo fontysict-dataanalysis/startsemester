@@ -74,7 +74,7 @@ h2 {
 .inline-h2-icon {
   height: 1.4rem;
   display: inline-flex !important;
-  margin: 0px 0px 0px -1rem !important;
+  margin: 0rem !important;
   border: none !important;
 }
 

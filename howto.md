@@ -77,11 +77,9 @@ Installatie kan op 2 manieren:
 
 - Via de GUI van RStudio.  
   Zoals je ziet kun je hier ook vinden welke libraries er al geïnstalleerd zijn.<br />
-
-  <img src="assets/img/lib_overview.png" width="600px" />
+<img src="assets/img/lib_overview.png" width="600px" />
 
   Klik op Install en vervolgens tik je de naam van de library in.<br />
-
   <img src="assets/img/lib_install.png" width="400px">
 
 - Ben je iets meer nerd, wil je sneller aan de slag, of moet je eventuele installatie issues oplossen? Dan gebruik je uiteraard de console! Deze vind je standaard in het vak linksonder, en kun je ook altijd via het menu naar voren toveren als je dat vak per ongeluk uitgezet hebt.  
