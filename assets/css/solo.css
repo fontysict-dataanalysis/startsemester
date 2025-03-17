@@ -71,13 +71,6 @@ h2 {
   text-align: left;
 }
 
-.inline-h2-icon {
-  height: 1.4rem;
-  display: inline-flex !important;
-  margin: 0rem !important;
-  border: none !important;
-}
-
 @media (min-width: 30rem) {
   h2 {
     margin-top: 2.5rem;
@@ -283,10 +276,47 @@ pre > code {
   font-size: small;
   font-weight: bold;
   color: #e8e8e8;
-  background-color: #0074d9;
-  border-color: darkblue;
+  background-color: #666;
+  border-color: #555;
   border-width: 2px;
   border-radius: 8px;
   margin-right: 0.4rem;
   padding: 3px 10px;
 }
+
+.bg-red {
+  background-color:#d94400 !important;
+}
+.bg-blue {
+  background-color:#0074d9 !important;
+}
+.bg-green {
+  background-color:#009044 !important;
+}
+.fg-red {
+  color:#d94400 !important;
+  filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg) brightness(80%) contrast(117%);
+}
+.fg-blue {
+  color:#0074d9 !important;
+  filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(210deg) brightness(94%) contrast(117%);
+}
+.fg-green {
+  color:#009044 !important;
+  filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(90deg) brightness(94%) contrast(117%);
+}
+
+.inline-h2-icon {
+  height: 1.4rem;
+  display: inline-flex !important;
+  margin: 0rem !important;
+  border: none !important;
+}
+
+.inline-icon {
+  height: 1rem;
+  display: inline-flex !important;
+  margin: 0rem !important;
+  border: none !important;
+}
+
