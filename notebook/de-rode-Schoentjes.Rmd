@@ -273,7 +273,6 @@ Laad de nodige bibliotheken voor de verwerking van de data:
 -   readxl
 -   RSQLite
 -   lubridate
--   tsibble
 
 ```{r Ophalen bibliotheken, fig.cap="Laden bibliotheken", message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
 library(tidyverse)  # bibliotheek voor datamanipulatie in R studio
@@ -282,7 +281,6 @@ library(ggplot2)    # bibliotheek voor het weergeven van data in grafieken
 library(readxl)     # bibliotheek Voor het inlezen van data uit Excel
 library(RSQLite)    # Ondersteuning van SQLite databases in memory
 library(lubridate)  # bibliotheek voor het interpreteren van datums, tijden en periodes 
-library(tsibble)    # zorg voor kalender functies zoals yearweek()
 ```
 
 ## Inlezen van de bestanden
@@ -449,13 +447,15 @@ datums <- seq(as.Date("2024-12-29"), as.Date("2025-12-31"), by="day")
 
 # maak een dataframe met alle datumgegevens. Zorg dat de datum als tekst wordt opgeslagen. 
 # Daardoor hoef je voor het laten zien van de datums geen datumfunctie te gebruiken.
+#
+# Er zit een fout in de yearweek waardes van 30 en 31 december. Het jaar staat dan op 2024. 
 frameDatums <- data.frame(
   Datum = format(datums, "%Y-%m-%d"),
   Wdag = wday(datums, label=FALSE),
   Wd = wday(datums, label=TRUE, abbr=TRUE),
   WdNm = wday(datums, label=TRUE, abbr=FALSE),
   WkNr = isoweek(datums),
-  JrWk = yearweek(datums),
+  JrWk = sprintf("%02d:%02d", year(datums),isoweek(datums)),
   MndNr = month(datums),
   Mnd = month(datums, label=TRUE, abbr=TRUE),
   MndNm = month(datums, label = TRUE, abbr=FALSE),
