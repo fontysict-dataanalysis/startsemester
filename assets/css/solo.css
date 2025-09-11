@@ -341,6 +341,10 @@ pre>code {
   filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(90deg) brightness(94%) contrast(117%);
 }
 
+.span-h1 {
+  line-height: 2.2rem;
+}
+
 .inline-h1-icon {
   height: 2.2rem;
   display: inline-flex !important;
