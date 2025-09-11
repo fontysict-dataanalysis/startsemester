@@ -25,7 +25,8 @@ De opdracht is in drie niveaus:
 
 - [Database](../dataset/Film.zip) een zip-bestand met alle databestanden in Excel formaat.
 - [Notebook](../notebook/videotheek.Rmd) In het notebook is het inlezen van de bestanden opgenomen en er zijn al chunks aangemaakt voor alle opdrachten.
+
 - <ins>**Verwachte uitkomsten**</ins>
-  [Opdrachten van film deel 1](../werkboek/Films-1.pdf)\
-   [Opdrachten van film deel 2](../werkboek/Films-2.pdf)\
-   [Opdrachten van film deel 3](../werkboek/Films-3.pdf)
+  - [Opdrachten van film deel 1](../werkboek/Films-1.pdf)
+  - [Opdrachten van film deel 2](../werkboek/Films-2.pdf)
+  - [Opdrachten van film deel 3](../werkboek/Films-3.pdf)

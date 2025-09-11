@@ -14,7 +14,7 @@ Deze Github pages website bevat allerlei materialen die bedoeld zijn om wegwijs 
 
 ## Bepaal je persoonlijke programma
 
-Werkboeken zijn er in verschillede soorten. Van heel erg eenvoudig tot redelijk complex. Wellicht heb je bij je vooropleiding of in de praktijk al ervaring opgedaan met SQL of met visualisatie in Excel, PowerBI, R of Python. Dat geeft je een voorsprong ten opzcihte van anderen.
+Werkboeken zijn er in verschillende soorten. Van heel erg eenvoudig tot redelijk complex. Wellicht heb je bij je vooropleiding of in de praktijk al ervaring opgedaan met SQL of met visualisatie in Excel, PowerBI, R of Python. Dat geeft je een voorsprong ten opzcihte van anderen.
 
 Bepaal vooraf voor jezelf wat jij wilt leren. Kijk daarna op de [roadmap](roadmap.md <span> <img class="inline-icon fg-red" src="./assets/svg/star.svg" />) welke werkboeken die daarbij aansluiten.
 
@@ -30,7 +30,7 @@ Soms is het handig om een of meerdere kennismakingscursussen te doen. Bijvoorbee
 
 ## Cheat sheets & andere bronnen
 
-Verzameling van cheat sheets en andere bronnen die handig kunnen zijn. Denk dan vooral verwijzingen naar informatie over SQL en R. Ze gaan soms wel vaak een stuk verder dan wat je in het startsemester nodig zult hebben, dus laat je daardoor niet verwarren!  
+Verzameling van cheat sheets en andere bronnen die handig kunnen zijn. Denk dan vooral aan verwijzingen naar informatie over SQL en R. Ze gaan soms wel vaak een stuk verder dan wat je in het startsemester nodig zult hebben, dus laat je daardoor niet verwarren!  
 Zie hier voor [meer informatie](cheeatsheets.md).
 
 ## Bijdragen of opmerkingen?
