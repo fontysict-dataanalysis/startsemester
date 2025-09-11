@@ -16,7 +16,7 @@ Deze Github pages website bevat allerlei materialen die bedoeld zijn om wegwijs 
 
 Werkboeken zijn er in verschillede soorten. Van heel erg eenvoudig tot redelijk complex. Wellicht heb je bij je vooropleiding of in de praktijk al ervaring opgedaan met SQL of met visualisatie in Excel, PowerBI, R of Python. Dat geeft je een voorsprong ten opzcihte van anderen.
 
-Bepaal vooraf voor jezelf wat jij wilt leren. Kijk daarna op de [roadmap](roadmap.md) welke werkboeken die daarbij aansluiten.
+Bepaal vooraf voor jezelf wat jij wilt leren. Kijk daarna op de [roadmap](roadmap.md <span> <img class="inline-icon fg-red" src="./assets/svg/star.svg" />) welke werkboeken die daarbij aansluiten.
 
 ## How-to's
 
