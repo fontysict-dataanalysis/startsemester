@@ -348,7 +348,7 @@ pre>code {
 .inline-h1-icon {
   height: 2.2rem;
   display: inline-block !important;
-  vertical-align: middle;
+  vertical-align: bottom;
   margin: 0rem !important;
   border: none !important;
 }
