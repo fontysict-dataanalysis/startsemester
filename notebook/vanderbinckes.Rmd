@@ -1,0 +1,102 @@
+---
+title: "VanderBinckes"
+output:
+  pdf_document:
+    keep_tex: true
+    fig_caption: yes
+    latex_engine: pdflatex
+    number_sections: true
+---
+
+Load the necessary libraries to be used in the code
+```{r Ophalen bibliotheken, warning=FALSE, message=FALSE, paged.print=FALSE}
+library(tidyr)
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(readxl)               # Voor het inlezen van data uit Excel
+library(lubridate)            # Voor het interpreteren van datums, tijden en periodes 
+```
+
+Load data into the database and do some initial cleaning
+```{r Lees de data uit het Excel bestand }
+# Lees de gegevens
+dfData <- read_excel('~/VanderBinckes.xlsx')
+```
+
+Vul het geslacht 'onbekend' in als het niet is ingevuld
+```{r Corrigeer Geslacht}
+dfData <- dfData %>%
+  mutate(Geslacht = replace_na(Geslacht, 'Onbekend'))
+```
+
+Corrigeer de types voor alle datums in de tabel
+```{r Corrigeer datumvelden}
+dfData <- dfData %>%
+  mutate(Created   = as.Date(Created, format="%Y-%m-%d", zone="CET")) %>%
+  mutate(GebDat    = as.Date(GebDat, format="%Y-%m-%d", zone="CET")) %>%
+  mutate(dtVertrek = as.Date(dtVertrek, format="%Y-%m-%d", zone="CET")) %>%
+  mutate(dtTerug   = as.Date(dtTerug, format="%Y-%m-%d", zone="CET")) %>%
+  mutate(dtAankoop = as.Date(dtAankoop, format="%Y-%m-%d", zone="CET"))
+```
+
+Deel klanten in naar leeftijd in groepen 
+```{r Leeftijdsindeling, message=FALSE, warning=FALSE}
+agebreaks <- c(0,5,13,18,30,50,67,80,500)
+agelabels <- c("0 -< 5","5-< 13","13 -< 17","18 -< 30","30 -< 50","50 -< 67","67 -< 80","> 80")
+
+# Verwerk de verdeling in het dataframe
+dfData <- dfData %>%
+  mutate(Leeftijd = floor(as.numeric(interval(GebDat, today()) %/% years(1)))) %>%
+  mutate(AgeGroup = cut(Leeftijd, breaks = agebreaks, right = FALSE, labels = agelabels))
+```
+
+Bepaal hoe lang een klant al bekend is (in maanden en in jaren)
+```{r Ouderdom klant}
+dfData <- dfData %>%
+  mutate(mndKlant = as.numeric(interval(Created, today()) %/% months(1))) %>%
+  mutate(jrnKlant = as.numeric(interval(Created, today()) %/% years(1)))
+```
+
+Bereken de huurtijd van de fiets in uren
+```{r Bereken de huurtijd van de fiets}
+dfData <- dfData %>%
+  mutate(tdVertrek = paste(dtVertrek, tdVertrek)) %>%
+  mutate(tdTerug = paste(dtTerug, tdTerug)) %>%
+  mutate(HuurTijd = difftime(tdTerug, tdVertrek, units="hours"))
+```
+
+Gebruik tidyverse om de data te groeperen naar aantallen per geslacht (zie ook de chunk)
+```{r Aantal verhuurregels per geslacht}
+frameGeslacht <- dfData %>%
+  group_by(Geslacht) %>%
+  summarise(aantal = n())
+frameGeslacht
+```
+
+Gebruik https://www.data-to-viz.com/ voor het maken van een grafiek
+```{r Plot frameGeslacht}
+ggplot(frameGeslacht, aes(x="", y=aantal, fill=Geslacht)) +
+  geom_bar(stat="identity", width=1) +
+  coord_polar("y", start=0)
+```
+
+Met ggplot2 kun je alle onderdelen toevoegen, zodat het er nog mooier uitziet
+```{r Plot frameGeslacht (optimalisatie)}
+ggplot(frameGeslacht, aes(x="", y=aantal, fill=Geslacht)) +
+  geom_col(color = "black") +
+  theme(legend.position="right",
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank(),
+        panel.grid = element_blank()) +
+  geom_text(aes(label = aantal),
+            position = position_stack(vjust = 0.5)) +
+  geom_label(aes(label = paste(Geslacht, '\n', aantal)),
+             color = "white",
+             position = position_stack(vjust = 0.5),
+             show.legend = FALSE) +
+  coord_polar(theta = "y")
+```
+
+#Hier volgen jouw chunks voor het berekenen van de KPIs
