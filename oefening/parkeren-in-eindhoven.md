@@ -7,7 +7,7 @@ titel: template
 
 Veel overheidsinstanties bieden data online aan. Dat is fijn, want met die openbare gegevens kun je jouw dashboard makkelijk beter maken.
 
-In dit werkboek worden [postcode gegevens van Eindhoven] (https://data.eindhoven.nl/explore/dataset/postcode-buurt-wijk/information/?disjunctive.buurtnaam&disjunctive.wijknaam&disjunctive.stadsdeelnaam&disjunctive.straatnaam&disjunctive.postcode6&disjunctive.postcode4&disjunctive.hsnr_aant) gekoppeld aan [parkeerplaatsen in Eindhoven] (https://data.eindhoven.nl/explore/dataset/parkeerplaatsen/information/?disjunctive.straat&disjunctive.type_en_merk&disjunctive.aantal). 
+In dit werkboek worden [postcode gegevens van Eindhoven](https://data.eindhoven.nl/explore/dataset/postcode-buurt-wijk/information/?disjunctive.buurtnaam&disjunctive.wijknaam&disjunctive.stadsdeelnaam&disjunctive.straatnaam&disjunctive.postcode6&disjunctive.postcode4&disjunctive.hsnr_aant) gekoppeld aan [parkeerplaatsen in Eindhoven](https://data.eindhoven.nl/explore/dataset/parkeerplaatsen/information/?disjunctive.straat&disjunctive.type_en_merk&disjunctive.aantal). 
 
 Door die informatie te combineren kun je de bereikbaarheid van voorzieningen bepalen en adviezen geven voor bijvoorbeeld de vestiging van een winkel.
 
@@ -25,6 +25,6 @@ In dit voorbeeld wordt expliciet de bibliotheek `leaflet` gebruikt om de informa
 
 Kennis van SQL is vereist. In eerdere opdrachten is alleen aandacht besteed aan het `SELECT` statement, maar voor de data cleaning is kennis van het `UPDATE` statement vereist. Kijk [hier](https://learn.microsoft.com/en-us/sql/t-sql/queries/update-transact-sql?view=sql-server-ver17) voor de beschrijving ervan. 
 
-Kijk [hier] (https://r-charts.com/spatial/interactive-maps-leaflet/) voor meer informatie over de `leaflet` bibliotheek.
+Kijk [hier](https://r-charts.com/spatial/interactive-maps-leaflet/) voor meer informatie over de `leaflet` bibliotheek.
 
 ### <span><img class="inline-h2-icon" src="../assets/svg/download.svg" /> Materialen</span>
