@@ -19,9 +19,18 @@ Het doel van dit werkboek is het maken van grafieken in R. Gebruik telkens 2 chu
 1. Maak met `tidyverse` functies een tabel met gegevens voor de x-as (onafhankelijke variabele) en de y-as (afhankelijke variabele)
 2. Zet de tabelinformatie om in een grafiek met `ggplot2`
 
+Bepaal zelf welke indicatoren volgens jou voor Van der Binckes bakfietsen van belang zijn. In het werkboek wordt als voorbeeld een pie-chart gemaakt met de verdeling man/vrouw/onbekend, maar je kunt ook denken aan:
+- Verdeling van de verhuur naar de leeftijdsgroep
+- Omzet per periode
+- Klanttevredenheid (NPS-score) van alle klanten in totaal of per jaar
+- Verhuuraantallen per fietstype
+- Aantal dagen verbuur
+- Aantal terugkerende klanten
+- enz. 
+
 ### <span><img class="inline-h2-icon" src="../assets/svg/brain.svg" /> Voorkennis</span>
 
-Kennis van de functies uit de bibliotheek `tidyverse` is een vereiste. In het werkboek pas je de functies `filter`, `mutate`, `group_by` en `summarize` toe. 
+Kennis van de functies uit de bibliotheek `tidyverse` is een vereiste. In het werkboek pas je de functies `filter`, `mutate`, `group_by` en `summarize` toe.
 
 Het gebruik van deze functies kun je leren via de datacamp training. Vraag de cursus aan bij je docent. Je kunt ook zelfstandig experimenteren met de aanwijzingen in de cheatsheets.
 
