@@ -40,6 +40,7 @@ Bij een werkboek staat ook uitgelegd wat je gaat oefenen. Op dit moment moet je 
 | Vertaal een beperkte dataset met verkopen per vertegenwoordiger naar informatie en kijk hoe je die het duidelijkst kunt visualiseren. <span class="pills"><span class="pill bg-blue">SQL</span><span class="pill bg-green">R</span><span class="pill bg-green">GGPLOT2</span></span> |
 | [**Van der Binckes bakfietsen**](/oefening/vanderbinckes.md) <span><img class="inline-icon fg-red" src="./assets/svg/star.svg" /><img class="inline-icon fg-red" src="./assets/svg/star.svg" /></span> |
 | Beschrijf performance indicatoren voor Van der Binckes en maak een dashboard waarin je die laat zien. <span class="pills"><span class="pill bg-green">R</span><span class="pill bg-green">TIDYVERSE</span><span class="pill bg-green">GGPLOT2</span></span> |
-
+| [**Van der Binckes bike sharing**](/oefening/vanderbinckes-bikesharing.md) <span><img class="inline-icon fg-red" src="./assets/svg/star.svg" /><img class="inline-icon fg-red" src="./assets/svg/star.svg" /><img class="inline-icon fg-red" src="./assets/svg/star.svg" /><img class="inline-icon fg-red" src="./assets/svg/star.svg" /></span> |
+| Maak een dashboard voor Van der Binckes waarin je gegevens uit meerder databronnen combineert tot informatie. Toon de performance indicatoren als document of in een flexdashboard. <span class="pills"><span class="pill bg-green">R</span><span class="pill bg-green">TIDYVERSE</span><span class="pill bg-green">GGPLOT2</span></span> |
 
 > Vooralsnog worden alleen werkboeken in R aangeboden, maar op termijn zal er ook materiaal in Python worden aangeboden.
