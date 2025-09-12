@@ -11,6 +11,8 @@ In dit werkboek worden [postcode gegevens van Eindhoven] (https://data.eindhoven
 
 Door die informatie te combineren kun je de bereikbaarheid van voorzieningen bepalen en adviezen geven voor bijvoorbeeld de vestiging van een winkel.
 
+Bepaal zelf welke informatie belangrijk jij zou willen presenteren aan de gemeenteraad, de wijkagent, een buurthuis, enz. 
+
 ### <span><img class="inline-h2-icon" src="../assets/svg/crosshairs.svg" /> Doel</span>
 
 Om gegevens van verschillende bronnen te kunnen combineren, moet je de data analyseren en bepalen hoe je die aan elkaar kunt koppelen. Daarbij kan het zijn dat je `data cleaning` moet toepassen om te zorgen dat de data niet vervuild wordt. Daarna kun je de gegevens weergeven in allerlei grafieken en overzichten.
