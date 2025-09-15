@@ -6,7 +6,9 @@ html {
 
 
 @media (max-width: 325px) {
-  html { font: 17px/1.6 'Open Sans', sans-serif; }
+  html {
+    font: 17px/1.6 'Open Sans', sans-serif;
+  }
 }
 
 body {
@@ -21,16 +23,25 @@ body {
 }
 
 a {
-  color: #0074d9; /* From http://clrs.cc */
+  color: #0074d9;
+  /* From http://clrs.cc */
   text-decoration: none;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   text-decoration: underline;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 0.5rem -0.1rem /* align left edge */;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 0.5rem -0.1rem
+    /* align left edge */
+  ;
   color: #111;
   text-rendering: optimizeLegibility;
   font-family: 'Open Sans', serif;
@@ -38,15 +49,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 750px) {
-h1, h2, h3, h4, h5, h6 {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
- }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 }
 
 h1 {
   font-size: 2.5rem;
-  margin-bottom: 1.5rem; /* 7rem; */
+  margin-bottom: 1.5rem;
+  /* 7rem; */
   font-weight: 700;
   margin-left: -2rem;
   margin-right: -2rem;
@@ -95,17 +113,26 @@ h3 {
   }
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   margin: 1.5rem -1rem 1.5rem -1rem;
   font-size: 1.5rem;
 }
 
-p, ul, ol, dl, table, pre, blockquote {
+p,
+ul,
+ol,
+dl,
+table,
+pre,
+blockquote {
   margin-top: 0;
   margin-bottom: 1.5rem;
 }
 
-ul, ol {
+ul,
+ol {
   padding-left: 1.5rem;
 }
 
@@ -130,7 +157,7 @@ blockquote p:last-child {
 }
 
 .center {
-  display:inline-block;
+  display: inline-block;
   margin: 0 auto;
 }
 
@@ -142,12 +169,13 @@ hr {
   top: -1px;
 }
 
-.img, .container iframe {
+.img,
+.container iframe {
   max-width: 100%;
 }
 
 a {
-word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .container img {
@@ -155,13 +183,13 @@ word-wrap: break-word;
   border-color: #999;
   border-width: 1px;
   max-width: 75%;
-  margin-top:0rem;
+  margin-top: 0rem;
 }
 
 @media (max-width: 635px) {
-.container img {
- max-width: 100%
- }
+  .container img {
+    max-width: 100%
+  }
 }
 
 table {
@@ -170,12 +198,14 @@ table {
   border-collapse: collapse;
 }
 
-td, th {
+td,
+th {
   padding: .25rem .5rem;
   border: 1px solid #ccc;
 }
 
-pre, code {
+pre,
+code {
   font-family: monospace;
   background-color: #eee;
 }
@@ -189,7 +219,7 @@ code {
   padding: .1rem .25rem;
 }
 
-pre > code {
+pre>code {
   padding: 0;
 }
 
@@ -210,34 +240,34 @@ pre > code {
 }
 
 @media (max-width: 635px) {
-.sharing {
- font-size: 85%;
- }
+  .sharing {
+    font-size: 85%;
+  }
 }
 
 /* This gets Google to fall into place */
 .social {
- text-align: right;
+  text-align: right;
 }
 
 .topsocial {
-	margin-bottom: 5em;
+  margin-bottom: 5em;
 }
 
 /* This gets Facebook to fall into place */
 .social iframe {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 /* Set an optional width for your button wrappers */
 .social span {
-	display: inline-block;
-	width: 110px;
+  display: inline-block;
+  width: 110px;
 }
 
 /* Adjust the widths individually if you like */
 .social .google {
-	width: 75px;
+  width: 75px;
 }
 
 .button {
@@ -253,19 +283,19 @@ pre > code {
 }
 
 .button:hover {
-	color: white;
-	background-color: #111;
-	cursor: pointer;
-	text-decoration: none;
-	transition: 0.5s;
+  color: white;
+  background-color: #111;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.5s;
 }
 
 .Facebook {
-	transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 .sharing-buttons {
-	width: 100%;
+  width: 100%;
 }
 
 .pills {
@@ -285,25 +315,42 @@ pre > code {
 }
 
 .bg-red {
-  background-color:#d94400 !important;
+  background-color: #d94400 !important;
 }
+
 .bg-blue {
-  background-color:#0074d9 !important;
+  background-color: #0074d9 !important;
 }
+
 .bg-green {
-  background-color:#009044 !important;
+  background-color: #009044 !important;
 }
+
 .fg-red {
-  color:#d94400 !important;
+  color: #d94400 !important;
   filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg) brightness(80%) contrast(117%);
 }
+
 .fg-blue {
-  color:#0074d9 !important;
+  color: #0074d9 !important;
   filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(210deg) brightness(94%) contrast(117%);
 }
+
 .fg-green {
-  color:#009044 !important;
+  color: #009044 !important;
   filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(90deg) brightness(94%) contrast(117%);
+}
+
+.span-h1 {
+  line-height: 2.2rem;
+}
+
+.inline-h1-icon {
+  height: 2.2rem;
+  display: inline-block !important;
+  vertical-align: bottom;
+  margin: 0rem !important;
+  border: none !important;
 }
 
 .inline-h2-icon {
@@ -319,4 +366,3 @@ pre > code {
   margin: 0rem !important;
   border: none !important;
 }
-
