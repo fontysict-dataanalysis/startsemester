@@ -14,20 +14,19 @@ Op deze website staat een aantal werkboeken. Hieronder wordt de moeilijkheidsgra
 > | <span> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /></span>| advanced |
 > | <span> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /></span> | epic |
 
-
 Er zijn twee soorten werkboeken: werkboeken waarmee je stapsgewijs kennis opdoet en verdiept en werkboeken waarmee je kennis aantoont.
 
 Achter elk werkboek is de moeilijkheidsgraad aangegeven. Een dichte ster geeft het startniveau aan; de dichte het niveau dat je hebt aan het einde van het werkboek. Het is verstandig om te beginnen met eenvoudige werkboeken voordat je begint aan complexe opdrachten.
 
 Bij een werkboek staat ook uitgelegd wat je gaat oefenen. Op dit moment moet je voor alle werkboeken R Studio gebruiken. Dat kan door het op je laptop te installeren, maar je kunt ook de online versie gebruiken. Kijk op de [index van howto's](howto.md) voor meer informatie.
 
-> Neem als je vastloopt bij het maken van opdrachten in het werkboek **altijd** contact op met je docent. Je mag natuurlijk [mij](mailto:k.velthuijs@fontys.nl) ook altijd mailen met vragen of opmerkingen. 
+> Neem als je vastloopt bij het maken van opdrachten in het werkboek **altijd** contact op met je docent. Je mag natuurlijk [mij](mailto:k.velthuijs@fontys.nl) ook altijd mailen met vragen of opmerkingen.
 
 ## Kennis opdoen en verdiepen
 
 | :------------------------------------------------------ |
 | [**De Rode Schoentjes**](/oefening/de-rode-schoentjes.md) <span> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /><img class="inline-icon fg-red" src="./assets/svg/star-open.svg" /><img class="inline-icon fg-red" src="./assets/svg/star-open.svg" /> </span> |
-| De schoenenwinkel van De Rode Schoentjes verkoopt in verschillende landen schoenen. Vertaal gegevens van de kassa naar zinvolle informatie aan het management.<br> Via het werkboek bouw je stapsgewijs je kennis van SQL op zodat je die in de andere werkboeken kunt  <span class="pills"><span class="pill bg-blue">SQL</span></span> |
+| De schoenenwinkel van De Rode Schoentjes verkoopt in verschillende landen schoenen. Vertaal gegevens van de kassa naar zinvolle informatie aan het management.<br> Via het werkboek bouw je stapsgewijs je kennis van SQL op zodat je die in de andere werkboeken kunt <span class="pills"><span class="pill bg-blue">SQL</span></span> |
 | [**Videotheek**](/oefening/videotheek.md) <span> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /><img class="inline-icon fg-red" src="./assets/svg/star-open.svg" /><img class="inline-icon fg-red" src="./assets/svg/star-open.svg" /><img class="inline-icon fg-red" src="./assets/svg/star-open.svg" /></span> |
 | In de jaren 80 en 90 was er zoiets als een videotheek. Dat was een plaats waar je videobanden en later dvd's en blueray's kon huren. Tegenwoordig kun je films zo makkelijk online "huren" op verschillende plekken, dat er geen videotheken meer zijn. We stappen in een tijdmachine en gaan terug in de tijd naar een videoverhuurbedrijf waar ze videobanden verhuren. <span class="pills"><span class="pill bg-blue">SQL</span></span> |
 
@@ -44,4 +43,5 @@ Bij een werkboek staat ook uitgelegd wat je gaat oefenen. Op dit moment moet je 
 | Maak een dashboard voor Van der Binckes waarin je gegevens uit meerder databronnen combineert tot informatie. Toon de performance indicatoren als document of in een flexdashboard. <span class="pills"><span class="pill bg-blue">SQL</span><span class="pill bg-green">R</span><span class="pill bg-green">TIDYVERSE</span><span class="pill bg-green">GGPLOT2</span></span> |
 | [**Parkeren in Eindhoven**](/oefening/parkeren-in-eindhoven.md) <span><img class="inline-icon fg-red" src="./assets/svg/star.svg" /><img class="inline-icon fg-red" src="./assets/svg/star.svg" /><img class="inline-icon fg-red" src="./assets/svg/star.svg" /></span> |
 | Gebruik openbare gegevens om een dashboard te maken. Daarvoor moet je de data eerst bewerken zodat je de gegevens met elkaar kunt verbinden. <span class="pills"><span class="pill bg-blue">SQL</span><span class="pill bg-blue">DATA CLEANING</span><span class="pill bg-green">R</span><span class="pill bg-green">TIDYVERSE</span><span class="pill bg-green">GGPLOT2</span></span> |
+
 > Vooralsnog worden alleen werkboeken in R aangeboden, maar op termijn zal er ook materiaal in Python worden aangeboden.
