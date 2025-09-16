@@ -23,12 +23,12 @@ Kennis van SQL en ervaring met het combineren van gegevens uit verschillende bro
 
 Voor het maken van een flexdashboard is een training in datacamp aanwezig. Vraag je docent om toegang tot deze e-learning course.
 
-Het zou mooi zijn als je de informatie kunt weergeven met de `leaflet` bibliotheek op de kaart van Eindhoven.  Kijk [hier] (https://r-charts.com/spatial/interactive-maps-leaflet/) voor meer informatie.
+Het zou mooi zijn als je de informatie kunt weergeven met de `leaflet` bibliotheek op de kaart van Eindhoven. Kijk [hier] (https://r-charts.com/spatial/interactive-maps-leaflet/) voor meer informatie.
 
 > De `leaflet` bibliotheek is niet beschikbaar op de online omgeving. Daarvoor moet je R op je eigen laptop geïnstalleerd hebben.
 
 ### <span><img class="inline-h2-icon" src="../assets/svg/download.svg" /> Materialen</span>
 
-- [Voorbeeld werkboek als pdf](../werkboek/de-rode-schoentjes.pdf)
-- [Werkboek in R](../notebook/vanderbinckes-bikesharing.Rmd)
+- [Voorbeeld werkboek als pdf](../werkboek/vanderbinckes-bikesharing.pdf)
+- [Werkboek in R](../notebook/vanderbinckesbikes-sharing.Rmd)
 - [Dataset als Zip-bestand](../dataset/vanderbinckes-bikesharing.zip)

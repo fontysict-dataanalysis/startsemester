@@ -3,7 +3,7 @@ layout: default
 titel: Videotheek
 ---
 
-## Videotheek
+## <span><img class="inline-h1-icon" src="../assets/svg/info.svg" /> Videotheek </span>
 
 ### <span><img class="inline-h2-icon" src="../assets/svg/crosshairs.svg" /> Doel</span>
 

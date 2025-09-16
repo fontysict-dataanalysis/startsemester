@@ -1,0 +1,171 @@
+---
+title: "Parkeren in Eindhoven"
+output:
+  html_document:
+    df_print: paged
+  pdf_document:
+    keep_tex: true
+    fig_caption: true
+    latex_engine: pdflatex
+    number_sections: true
+always_allow_html: yes
+---
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readxl)
+library(ggplot2)
+library(RSQLite)
+library(leaflet)
+library(writexl) 
+```
+
+# Load
+
+## Parkeerplaatsen per straat
+```{r lees de parkeerlocaties}
+# lezen parkeerlocaties
+dfParkeren <- read_excel("C:/Users/Fontys/OneDrive - Office 365 Fontys/~ Documents/R/Datasets/Parkeren Eindhoven/parkeerplaatsen.xlsx")     
+
+# splits de kolom geolocatie in lon en lat
+dfParkeren <- separate(dfParkeren, 'geo_point_2d', c('lat','lon'), ',')
+
+# Maak inhoud colommen lon en lat numeriek
+dfParkeren <- dfParkeren %>%
+    mutate_at(c('lon', 'lat'), as.numeric)
+
+# verwijder de kolom geo_shape uit de tabel
+dfParkeren$geo_shape <- NULL
+
+# Hernoem de kolom 'Type_en_merk' naar 'Soort'
+colnames(dfParkeren)[colnames(dfParkeren) == 'Type_en_merk'] <- 'Soort'
+```
+
+## Van straat naar postcode, buurt, wijk, stadsdeel
+```{r postcode, message=FALSE, warning=FALSE}
+# lezen postcodes 
+dfPostcode <- read_excel("C:/Users/Fontys/OneDrive - Office 365 Fontys/~ Documents/R/Datasets/Parkeren Eindhoven/postcode-buurt-wijk.xlsx")  
+
+dfStraat <- dfPostcode %>% 
+  select (STRAATNAAM, POSTCODE6, POSTCODE4, BUURTCODE, WIJKCODE, STADSDEELCODE, longitude, latitude)
+
+# Wijzig de titels zodat de tabel met buurten (alleen) bestaat uit:
+#   - Straatnaam
+#   - Postcode_6
+#   - Postcode_4
+#   - BuurtID
+#   - WijkID
+#   - StadsdeelID
+#   - Longitude
+#   - Latitude
+colnames(dfStraat) <- c('Straatnaam', 'Postcode_6', 'Postcode_4', 'BuurtID', 'WijkID', 'StadsdeelID', 'Longitude', 'Latitude')
+```
+
+## Maak een stervormig model door dimensies en feiten te scheiden
+Maak een aparte dataset met stadsdelen
+```{r Stadsdelen}
+dfStadsdelen <- dfPostcode %>%
+    select (STADSDEELCODE, STADSDEELNAAM) %>%
+    distinct (STADSDEELCODE, STADSDEELNAAM) %>%
+    arrange  (STADSDEELCODE)
+colnames(dfStadsdelen) <- c('ID', 'Stadsdeel')
+```
+
+Maak een aparte dataset met  wijken
+```{r Wijken}
+dfWijken  <- dfPostcode %>%
+    select (WIJKCODE, WIJKNAAM) %>%
+    distinct (WIJKCODE, WIJKNAAM) %>%
+    arrange  (WIJKCODE)
+colnames(dfWijken) <- c('ID', 'Wijk')
+```
+
+Maak een aparte dataset met buurten
+```{r Buurten}
+dfBuurten  <- dfPostcode %>%
+    select (BUURTCODE, BUURTNAAM) %>%
+    distinct (BUURTCODE, BUURTNAAM) %>%
+    arrange  (BUURTCODE)
+colnames(dfBuurten) <- c('ID', 'Buurt')
+```
+
+```{r Vul een SQLite database met de data, message=FALSE, warning=FALSE}
+database <- DBI::dbConnect(RSQLite::SQLite(), ":memory:")
+copy_to(database, dfParkeren, "parkeren")
+copy_to(database, dfStadsdelen, "stadsdelen")
+copy_to(database, dfWijken, "wijken")
+copy_to(database, dfBuurten, "buurten")
+copy_to(database, dfStraat, "straten")
+```
+
+## Maak het centrale deel van het stermodel met de feiten 
+```{sql Maak één datachunk met de gecombineerde gegevens, connection=database, output.var="dfStraatparkeren"}
+SELECT Objectid, Straat, Soort, Aantal, Postcode_6, Postcode_4, BuurtID, WijkID, StadsdeelID, lat, lon
+FROM parkeren
+LEFT OUTER JOIN straten
+  ON parkeren.Straat = straten.Straatnaam
+```
+
+```{r Zet de hele datachunk als één tabel in de database }
+copy_to(database, dfStraatparkeren, "straatparkeren")
+```
+
+# Data cleaning 
+
+## De Ventoselaan kent geen huisnummers en heeft daarom geen postcode 
+## Wijzig in buurt 113, wijk 11, stadsdeel 1
+```{sql echo=FALSE, connection=database}
+UPDATE straatparkeren
+SET
+WHERE 
+```
+
+# bij de parkeerplaatsen staat Philitestraat, maar moet Philitelaan zijn
+# Wijzig in buurt 616, wijk 61, stadsdeel 6
+```{sql echo=FALSE, connection=database}
+UPDATE straatparkeren
+SET
+WHERE
+```
+
+# De Benedictusstraat bestaat niet meer. Het was een straat in Oud-Woensel. De parkeerplaatsen zijn er nog wel 
+# Wijzig in buurt 412, wijk 41, stadsdeel 4
+```{sql echo=FALSE, connection=database}
+UPDATE straatparkeren
+SET
+WHERE 
+```
+
+# Load
+
+## Gebruik één dimensie (Wijk) om de gegevens samen te vatten 
+```{sql Maak een samenvatting per wijk hoeveel parkeerplaatsen er zijn, echo=FALSE, connection=database, output.var="dfStraatparkeren"}
+select WijkID
+      , Wijk
+      , count(*) as Aantal
+      , AVG(lon) as Longitude
+      , AVG(lat) as Latitude
+from straatparkeren
+inner join wijken
+  on WijkID = ID
+group by WijkID, Wijk
+```
+
+```{r Laat per wijk zien hoeveel parkeerplaatsen er zijn}
+dfStraatparkeren
+```
+
+## Presenteer het in een staafgrafiek
+```{r Toon een grafiek met het aantal parkeerplaatsen aflopend}
+ggplot(dfStraatparkeren, aes(x = fct_reorder(WijkID, Aantal, desc), y=Aantal, fill=WijkID)) + 
+  geom_col()
+```
+
+## Presenteer het op de kaart van Eindhoven
+```{r Gebruik de leaflet bibliotheek om het overzicht te projecteren op de kaart van Eindhoven}
+leaflet () %>% 
+  addTiles() %>%
+   addCircles(lng = dfStraatparkeren$Longitude, lat = dfStraatparkeren$Latitude, weight = 1
+    , radius = sqrt(dfStraatparkeren$Aantal) * 10
+    , label= paste(dfStraatparkeren$Stadsdeel, " ", format(dfStraatparkeren$Aantal, big.mark = ".", decimal.mark = ",") ) )
+```

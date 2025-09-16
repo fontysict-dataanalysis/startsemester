@@ -1,0 +1,244 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  word_document: default
+---
+
+Load the necessary libraries to be used in the code
+```{r Ophalen bibliotheken, warning=FALSE, message=FALSE, paged.print=FALSE}
+library(tidyr)
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(readxl)               # Voor het inlezen van data uit Excel
+library(lubridate)            # Voor het interpreteren van datums, tijden en periodes 
+library(RSQLite)              # voor de ondersteuning van SQL in R
+library(leaflet)
+```
+
+Haal data op uit Excel en plaats die in een SQLite database
+```{r Inladen data in SQLite database, message=FALSE, warning=FALSE}
+database <- DBI::dbConnect(RSQLite::SQLite(), ":memory:")
+copy_to(database, name="buurt",     df = read_excel('~/Buurten.xlsx'))
+copy_to(database, name="CAO",       df = read_excel('~/CAO.xlsx'))
+copy_to(database, name="fiets",     df = read_excel('~/Fietsen.xlsx'))
+copy_to(database, name="fietstype", df = read_excel('~/FietsTypes.xlsx'))
+copy_to(database, name="klant",     df = read_excel('~/Klanten.xlsx'))
+copy_to(database, name="locatie",   df = read_excel('~/Locaties.xlsx'))
+copy_to(database, name="medewerker",df = read_excel('~/Medewerkers.xlsx'))
+copy_to(database, name="onderhoud", df = read_excel('~/OnderhoudsData.xlsx'))
+copy_to(database, name="rooster",   df = read_excel('~/Rooster.xlsx'))
+copy_to(database, name="schade",    df = read_excel('~/Schades.xlsx'))
+copy_to(database, name="sharing",   df = read_excel('~/SharingData.xlsx'))
+copy_to(database, name="stadsdeel", df = read_excel('~/Stadsdelen.xlsx'))
+copy_to(database, name="weer",      df = read_excel('~/Weerdata.xlsx'))
+copy_to(database, name="wijk",      df = read_excel('~/Wijken.xlsx'))
+```
+
+
+#Maak een overzicht van de sharing
+
+## Aantal fietsen per type en uitvoering
+
+### Met dit SQL commando krijg je het aantal fietsen per type en uitvoering in een tabel
+```{sql connection=database, output.var="frameFietsenPerTypeEnUitvoering"}
+select FietsType.ID, FietsType.OMSCHRIJVING, fietstype.UITVOERING, count(*) AS Aantal
+from sharing
+inner join Fiets 
+  on Fiets.ID = sharing.fietsid
+inner join Fietstype
+  on Fietstype.ID = fiets.FIETSTYPEID
+GROUP BY Fietstype.id, Fietstype.omschrijving, fietstype.UITVOERING
+ORDER BY 1
+```
+
+### Verzin nu zelf een manier om dat met ggplot te presenteren
+```{r echo=FALSE}
+frameFietsenPerTypeEnUitvoering
+```
+
+
+## Aantal klanten per land
+```{sql connection=database, include=FALSE, output.var="frameKlantenPerLand"}
+```
+
+### Maak met SQL een tabel die er zo uitziet
+
+```{r}
+frameKlantenPerLand
+```
+
+### Maak aan de hand deze tabel onderstaande kolomdiagram
+```{r ggplot Klanten per Land, echo=FALSE}
+
+
+```
+
+
+## Kilometers per Leverancier
+
+```{sql connection=database, include=FALSE, output.var="frameKilometersPerLeverancier"}
+
+
+```
+
+### Gebruik SQL om een tabel te maken die er zo uitziet
+```{r}
+frameKilometersPerLeverancier
+```
+
+### Gebruik vervolgens ggplot om een violin chart te maken.
+
+Het voordeel van een violin chart is dat je goed kunt zien hoet de verdeling van de kilometers is. Beter dan alleen een gemiddelde en zelfs beter dan in een box-plot.
+
+```{r ggplot Kilometers Per Leverancier, echo=FALSE}
+
+
+```
+
+## Totale kosten (onderhoud en schade) per fietstype
+
+```{sql connection=database, include=FALSE, output.var="frameKostenPerFietsType"}
+
+
+```
+
+### Maak met SQL een tabel die er zo uitziet
+```{r}
+frameKostenPerFietsType
+```
+
+### Maak aan de hand van de tabel een staafdiagram dat er zo uitziet.
+
+```{r ggplot Kosten per FietsType en Onderhoud, echo=FALSE}
+
+
+```
+
+## Een heatmap op basis van het aantal kilometers van/naar een stadsdeel
+
+```{sql connection=database, include=FALSE, output.var="frameKmsBeginEindeStadsdeel"}
+
+
+```
+
+### Maak met SQL een tabel die er zo uitziet
+```{r Uitvoer frameKmsBeginEindeStadsdeel }
+frameKmsBeginEindeStadsdeel
+```
+
+### Maak op basis daarvan een heatmap die er zo uitziet
+
+```{r echo=FALSE}
+
+
+```
+
+
+# Gebruik van datums
+
+## Maak van de datum een tekst
+ %Y = jaar
+ %m = maand
+ %W = week (let op met weeknummers! Die zijn niet altijd aansluitend bij de Europese kalender)
+ %D = dag
+ %H = uur
+ %M = minuut
+ %S = seconde
+ %s = unix datum formaat
+ %j = dag in het jaar
+ %w = dag van de week (0=zo 1=ma 2=di 3=wo 4=do 5=vr 6=za)
+```{sql connection=database}
+select strftime('%Y-%W', Datum) as week
+  , count(*)
+from weer
+inner join sharing
+  on strftime('%Y-%M-%D', sharing.dtVertrek) = strftime('%Y-%M-%D') 
+group by week
+```
+
+
+## Voorbeeld hoe je datums en tijden vertaalt van naar het ene naar het andere formaat
+
+dtVertrek uit sharing vertalen naar tekst
+Datum als tekst:      DateTime(dtVertrek, 'unixepoch')
+Datum uit dtVertrek:  DATE(DateTime(dtVertrek, 'unixepoch'))
+Tijd uit dtVertrek:   TIME(DateTime(dtVertrek, 'unixepoch'))
+
+```{sql connection=database}
+select id
+  , DateTime(dtVertrek, 'unixepoch') as 'SharingDate'
+  , strftime("%Y %j", DateTime(dtVertrek, 'unixepoch'))
+  , DATE(DateTime(dtVertrek, 'unixepoch')) as 'SharingDate'
+  , TIME(DateTime(dtVertrek, 'unixepoch')) as 'SharingTime'
+  , KlantID
+from sharing
+order by 2, 1
+```
+
+
+## Koppel de data van de tabel weer op basis van datum
+
+```{sql connection=database, output.var="frameWindrichting"}
+select weer.Windrichting as 'Windrichting'
+  , count(*) as 'Aantal'
+from sharing
+inner join weer
+  on weer.Datum = Date(DateTime(sharing.dtVertrek, 'unixepoch'))
+group by weer.Windrichting
+order by 1 asc
+```
+
+### Gebruik dat in een overzicht
+```{r}
+ggplot (frameWindrichting, aes(x = fct_reorder(Windrichting, Aantal, desc), y=Aantal, fill = Windrichting)) + 
+  geom_col()
+```
+
+## Aantal van ritten per buurt
+
+```{sql connection=database, output.var="frameLocaties"}
+select locatie.BUURTCODE  as 'BuurtID'
+  , buurt.BUURTNAAM as 'Buurt'
+  , avg(locatie.LON) as 'longitude'
+  , avg(locatie.LAT) as 'latitude'
+  , count(*)   as 'aantal'
+from sharing
+inner join locatie
+  on  locatie.ID = sharing.LocatieBeginID
+inner join buurt
+  on  buurt.BUURTCODE = locatie.BUURTCODE
+where (TIME(DateTime(sharing.dtVertrek, 'unixepoch')) between '22:00' and '23:59')
+   OR (TIME(DateTime(sharing.dtVertrek, 'unixepoch')) between '00:00' and '06:00')
+group by locatie.BUURTCODE, buurt.BUURTNAAM
+order by 1, 2, 3
+```
+
+### Definieer categorieën met een begin- en eindaantal 
+```{r}
+numBreaks <- c(0,10,20,30,40,50,60,70,80,90,50000)
+numColors  <- c("0","1","2","3","4","5","6","7","8","9")
+frameLocaties <- frameLocaties %>%
+  mutate(colorGroup = cut(aantal, breaks = numBreaks, right = FALSE, labels = numColors))
+frameLocaties 
+```
+
+### Geef aan welke kleur aan de categorie gekoppeld wordt
+```{r}
+pal <- colorFactor(
+    palette =c("purple4", "royalblue", "dodgerblue3", "deepskyblue1", "turquoise2", "palegreen3", "darkgoldenrod1", "chocolate1","red" ,"brown4"),
+    domain = c("0", "1", "2", "3", "4", "5", "6", "7", "8", "9"))
+```
+
+## Laat per buurt zien op de kaart van Eindhoven hoeveel ritten er geweest zijn. Gebruik daarbij de kleurendefinitie.
+```{r}
+leaflet () %>% 
+  addTiles() %>%
+    addCircleMarkers(lng = frameLocaties$longitude, lat = frameLocaties$latitude
+        , color = pal(frameLocaties$colorGroup)
+        , label= paste(frameLocaties$Buurt, ": ", format(frameLocaties$aantal, big.mark = ".", decimal.mark = ",") )
+        , radius = 8 + frameLocaties$aantal/10)
+```

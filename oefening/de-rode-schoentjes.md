@@ -3,7 +3,7 @@ layout: default
 titel: De Rode Schoentjes
 ---
 
-## De Rode Schoentjes
+## <span><img class="inline-h1-icon" src="../assets/svg/info.svg" /> De Rode Schoentjes </span>
 
 ### <span><img class="inline-h2-icon" src="../assets/svg/crosshairs.svg" /> Doel</span>
 

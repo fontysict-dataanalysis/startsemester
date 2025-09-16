@@ -1,0 +1,209 @@
+---
+title: "Dashboard t.b.v. De Rode Schoentjes"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    
+De achtergrond en meer  uitleg kun je vinden op:
+    https://fontysict-dataanalysis.github.io/startsemester/oefening/de-rode-schoentjes.html
+---
+
+```{r Ophalen bibliotheken, fig.cap="Laden bibliotheken", message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+library(tidyverse)  # bibliotheek voor datamanipulatie in R studio
+library(dplyr)      # bibliotheek voor het groeperen en samenvatten van dataframes in R
+library(ggplot2)    # bibliotheek voor het weergeven van data in grafieken
+library(readxl)     # bibliotheek Voor het inlezen van data uit Excel
+library(RSQLite)    # Ondersteuning van SQLite databases in memory
+library(lubridate)  # bibliotheek voor het interpreteren van datums, tijden en periodes 
+
+# toevoegen zodat je het dashboard kunt maken
+library(flexdashboard)  #het dashboard om een dashboard te maken
+library(plotly)
+```
+
+```{r Inlezen data uit Excel, message=FALSE, warning=FALSE}
+setwd('~/R/Datasets/De Rode Schoentjes/')
+
+database <- DBI::dbConnect(RSQLite::SQLite(), ":memory:")
+copy_to(database, name="filiaal",
+        df = read_excel('Filiaal.xlsx'))
+copy_to(database, name="categorie",
+        df = read_excel('Categorie.xlsx'))
+copy_to(database, name="budget",
+        df = read_excel('Budget.xlsx'))
+copy_to(database, name="kassa",
+        df = read_excel('Kassa.xlsx'))
+```
+
+```{r Genereer een dataframe met datumgegevens, include=FALSE}
+# genereer de reeks van dagen tussen 29 december 2024 en 31 december 2025 
+datums <- seq(as.Date("2024-12-29"), as.Date("2025-12-31"), by="day")
+
+# maak een dataframe met alle datumgegevens. Zorg dat de datum als tekst wordt opgeslagen. 
+# Daardoor hoef je voor het laten zien van de datums geen datumfunctie te gebruiken.
+frameDatums <- data.frame(
+  Datum = format(datums, "%Y-%m-%d"),
+  Wdag = wday(datums, label=FALSE),
+  Wd = wday(datums, label=TRUE, abbr=TRUE),
+  WdNm = wday(datums, label=TRUE, abbr=FALSE),
+  MndNr = month(datums),
+  Mnd = month(datums, label=TRUE, abbr=TRUE),
+  MndNm = month(datums, label = TRUE, abbr=FALSE),
+  Mdag = mday(datums),
+  Qrt = quarter(datums, type = "year.quarter"),
+  JrNr = year(datums),
+  Jdag = yday(datums)
+) 
+
+# pas de weergave van het kwartaal aan naar YY.Qn
+frameDatums$Qrt <- str_replace_all(frameDatums$Qrt, c("^20" = "", "\\." = "Q"))
+
+# voeg het dataframe toe aan de SQLite database
+copy_to(database, "datumtabel", df=frameDatums, overwrite=TRUE)
+```
+
+```{sql SQL Omzet per categorie, echo=FALSE, connection=database, output.var="frameOmzet"}
+SELECT cat.id as 'Cat'
+    , cat.omschrijving AS 'Omschrijving'
+    , filiaal.id as 'Fil'
+    , filiaal.Land as 'Land'
+    , datumtabel.Datum as 'Datum'
+    , datumtabel.JrNr AS 'Jaar'
+    , datumtabel.Mnd AS 'Maand'
+    , datumtabel.MndNr as 'MndNr'
+    , strftime('%W', datumtabel.Datum) as 'Wk'
+    , datumtabel.Wdag as 'Dag'
+    , kassa.Bedrag AS 'Bedrag'
+FROM categorie cat
+INNER JOIN kassa
+  ON kassa.categorieID = cat.ID 
+INNER JOIN filiaal
+  ON filiaal.ID = kassa.FiliaalID
+INNER JOIN datumtabel
+  ON datumtabel.Datum = date(kassa.datum, 'unixepoch')
+WHERE datumtabel.JrNr = 2025
+```
+
+```{r omzetverdeling per categorie}
+frameOmzetPerCategorie <- frameOmzet %>%
+  group_by(Omschrijving) %>%
+  summarise(Omzet = sum(Bedrag))
+```
+
+```{r Pie chart Omzetverdeling per categorie}
+plotPieChartOmzetVerdeling <- ggplot(frameOmzetPerCategorie, aes(x="", y=Omzet, fill=fct_reorder(Omschrijving,Omzet))) +
+  geom_bar(stat="identity", width=1) +
+  coord_polar("y", start=0) +
+  theme_void() 
+```
+
+```{r omzet per categorie per maand }
+frameOmzetPerCategoriePerMaand <- frameOmzet %>%
+  group_by(MndNr, Omschrijving, Jaar, Maand) %>%
+  summarise(Omzet = sum(Bedrag))
+```
+
+```{r Grafiek Omzet per categorie per maand, warning=FALSE}
+plotOmzetPerCategoriePerMaand <-  ggplot(frameOmzetPerCategoriePerMaand, aes(fill=fct_reorder(Omschrijving,Omzet), x=factor(MndNr), y=Omzet)) + 
+  geom_bar(position='stack', stat='identity')
+```
+
+```{r bepaal de omzet perland per dag}
+frameOmzetPerCategoriePerWeekdag <- frameOmzet %>%
+  group_by(Datum, Omschrijving) %>%
+  summarize(Omzet = sum(Bedrag)) 
+```
+
+```{r}
+ plotVerdelingDagomzetPerCategorie <- ggplot(frameOmzetPerCategoriePerWeekdag, aes(x=fct_reorder(Omschrijving,Omzet), y=Omzet, fill=Omschrijving)) +
+  geom_violin() +
+  theme(legend.position = "none") +
+  coord_flip()
+```
+
+```{r bepaal de omzet per dag naar dagnummer }
+frameOmzetPerWeekdag <- frameOmzet %>%
+  group_by(Datum, Dag) %>%
+  summarize(Omzet = sum(Bedrag)) 
+```
+
+```{r plot Verdeling Dagomzet per Weekdag }
+plotVerdelingDagomzetPerWeekdag <- ggplot(frameOmzetPerWeekdag, aes(x=factor(Dag), y=Omzet, fill=factor(Dag))) +
+  geom_violin()
+``` 
+
+```{sql SQL gebudgetteeerde verkopen, echo=FALSE, connection=database, output.var="frameBudgetToDate"}
+SELECT Filiaal.ID as 'Fil'
+    , Filiaal.Land as 'Land'
+    , Budget.Week as 'Week'
+    , Budget.Budget as 'Budget'
+FROM Filiaal
+INNER JOIN Budget
+  ON Budget.FiliaalID = filiaal.ID
+WHERE Budget.Week <= strftime('%W', Date('now'))
+```
+
+
+```{r}
+totaleOmzet <- as.numeric(frameOmzet %>%
+  summarise(totaleOmzet = sum(Bedrag)))
+totaleBudget <- as.numeric(frameBudgetToDate %>%
+  summarise(totaleBudget = sum(Budget)))
+
+rate <- (totaleOmzet / totaleBudget) * 100
+```
+
+
+Row
+------------------------------------------------------------
+### Realisatie
+```{r}
+library(DT)
+gauge(rate, min=0, max=200, symbol = "%", gaugeSectors(
+  success = c(100,200),
+  warning = c(70,99),
+  danger = c(0, 69)
+))
+```
+
+### Totale omzet
+```{r}
+library(DT)
+
+valueBox(paste("€", prettyNum(totaleOmzet, big.mark='.', small.mark=","))
+         , icon="fa-money-bill-wave"
+         , color = ifelse( totaleOmzet > totaleBudget, "#009000", "#D00000"))
+```
+
+### Totale budget
+```{r}
+library(DT)
+
+valueBox(paste("€", prettyNum(totaleBudget, big.mark='.', small.mark=",")), icon="fa-money-bill-wave")
+```
+
+Row
+------------------------------------------------------------
+### Omzet per categorie per maand
+```{r}
+plotOmzetPerCategoriePerMaand
+```
+
+### Verdeling van de dagomzet per weekdag
+```{r}
+plotVerdelingDagomzetPerWeekdag
+```
+
+Row 
+------------------------------------------------------------
+### Verdeling van de totale omzet per categorie
+```{r}
+plotPieChartOmzetVerdeling
+```
+
+
+### Verdeling omzet per categorie
+```{r}
+plotVerdelingDagomzetPerCategorie
+```
+
