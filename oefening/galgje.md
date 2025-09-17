@@ -7,7 +7,7 @@ titel: Galgje
 
 ### <span><img class="inline-h2-icon" src="../assets/svg/crosshairs.svg" /> Doel</span>
 
-Het leren van de basis van hte analyseren van data met behulp van SQL. Het beperkt zich in deze opgave tot het bevragen van slechts één tabel.
+Het leren van de basis van het analyseren van data met behulp van SQL. Het beperkt zich in deze opgave tot het bevragen van slechts één tabel.
 
 ### <span><img class="inline-h2-icon" src="../assets/svg/brain.svg" /> Voorkennis</span>
 
