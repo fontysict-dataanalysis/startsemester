@@ -25,6 +25,8 @@ Bij een werkboek staat ook uitgelegd wat je gaat oefenen. Op dit moment moet je 
 ## Kennis opdoen en verdiepen
 
 | :------------------------------------------------------ |
+| [**Galgje**](/oefening/galgje.md) <span><img class="inline-icon fg-red" src="./assets/svg/star.svg" /><img class="inline-icon fg-red" src="./assets/svg/star-open.svg" /></span> |
+| Een dataset van het woordspelletje dat je vast wel kent. Via het spelletje zijn gegevens verzameld van leerlingen van de basisschool en de eerste jaren van het middelbaar onderwijs. Vertaal de inzichten naar tabellen en grafieken waar de docenten iets mee kunnen. <span class="pills"><span class="pill bg-blue">SQL</span><span class="pill bg-green">R</span><span class="pill bg-green">GGPLOT2</span></span> |
 | [**De Rode Schoentjes**](/oefening/de-rode-schoentjes.md) <span> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /><img class="inline-icon fg-red" src="./assets/svg/star-open.svg" /><img class="inline-icon fg-red" src="./assets/svg/star-open.svg" /> </span> |
 | De schoenenwinkel van De Rode Schoentjes verkoopt in verschillende landen schoenen. Vertaal gegevens van de kassa naar zinvolle informatie aan het management.<br> Via het werkboek bouw je stapsgewijs je kennis van SQL op zodat je die in de andere werkboeken kunt <span class="pills"><span class="pill bg-blue">SQL</span></span> |
 | [**Videotheek**](/oefening/videotheek.md) <span> <img class="inline-icon fg-red" src="./assets/svg/star.svg" /><img class="inline-icon fg-red" src="./assets/svg/star-open.svg" /><img class="inline-icon fg-red" src="./assets/svg/star-open.svg" /><img class="inline-icon fg-red" src="./assets/svg/star-open.svg" /></span> |
@@ -33,9 +35,7 @@ Bij een werkboek staat ook uitgelegd wat je gaat oefenen. Op dit moment moet je 
 ## Kennis aantonen
 
 | :------------------------------------------------------ |
-| [**Galgje**](/oefening/galgje.md) <span><img class="inline-icon fg-red" src="./assets/svg/star.svg" /></span> |
-| Een dataset van het woordspelletje dat je vast wel kent. Via het spelletje zijn gegevens verzameld van leerlingen van de basisschool en de eerste jaren van het middelbaar onderwijs. Vertaal de inzichten naar tabellen en grafieken waar de docenten iets mee kunnen. <span class="pills"><span class="pill bg-blue">SQL</span><span class="pill bg-green">R</span><span class="pill bg-green">GGPLOT2</span></span> |
-| [**Verkopen**](/oefening/verkopen-visualiseren.md) <span><img class="inline-icon fg-red" src="./assets/svg/star.svg" /><img class="inline-icon fg-red" src="./assets/svg/star.svg" /></span> |
+| [**Verkopen visualiseren**](/oefening/verkopen-visualiseren.md) <span><img class="inline-icon fg-red" src="./assets/svg/star.svg" /><img class="inline-icon fg-red" src="./assets/svg/star.svg" /></span> |
 | Vertaal een beperkte dataset met verkopen per vertegenwoordiger naar informatie en kijk hoe je die het duidelijkst kunt visualiseren. <span class="pills"><span class="pill bg-blue">SQL</span><span class="pill bg-green">R</span><span class="pill bg-green">GGPLOT2</span></span> |
 | [**Van der Binckes bakfietsen**](/oefening/vanderbinckes.md) <span><img class="inline-icon fg-red" src="./assets/svg/star.svg" /><img class="inline-icon fg-red" src="./assets/svg/star.svg" /></span> |
 | Beschrijf performance indicatoren voor Van der Binckes en maak een dashboard waarin je die laat zien. <span class="pills"><span class="pill bg-green">R</span><span class="pill bg-green">TIDYVERSE</span><span class="pill bg-green">GGPLOT2</span></span> |
