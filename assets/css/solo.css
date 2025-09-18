@@ -326,6 +326,10 @@ pre>code {
   background-color: #009044 !important;
 }
 
+.bg-orange {
+  background-color: orange !important;
+}
+
 .fg-red {
   color: #d94400 !important;
   filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg) brightness(80%) contrast(117%);
